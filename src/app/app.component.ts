@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  appIcon = {
+    url: `./assets/orange-logo.png`,
+    height: 30,
+    width: 30
+  };
 }
