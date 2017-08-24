@@ -1,0 +1,20 @@
+@import '../variables/shadow';
+@import '../variables/font';
+
+.app-input {
+    &::-webkit-input-placeholder {
+        color: $color-black-secondary;
+    }
+    &:hover {
+        box-shadow: $shadow-light;
+    }
+    &:focus {
+         box-shadow: $shadow-light;
+    }
+    border-radius: 10px;
+    outline: none;
+    line-height: 12px;
+    padding: 3px 8px;
+    border: 0;
+    box-shadow: inset $shadow-light;
+}
