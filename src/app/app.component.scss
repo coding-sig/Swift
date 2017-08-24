@@ -18,7 +18,7 @@ $content-bg-color: #e2e1e0;
         padding: 0 20px;
         height: 50px;
         width: 100%;
-        background: $primary-color;
+        background: $primary-color-deep;
         color: $color-white;
 
         .app-title {
@@ -35,6 +35,6 @@ $content-bg-color: #e2e1e0;
     .app-footer {
         width: 100%;
         height: 40px;
-        background: $primary-color-deep;
+        background-color: $primary-color-deep;
     }
 }
