@@ -1,0 +1,47 @@
+// app theme variables
+@import '../variables/shadow';
+@import '../variables/font';
+
+.card {
+    padding: 8px;
+    margin: 8px;
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+    box-shadow: $shadow-light;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    &:hover {
+        box-shadow: $shadow-deep;
+    }
+
+    .title {
+        font-weight: $font-weight-bold;
+        font-size: $font-title-size;
+        margin: 8px 0;
+    }
+
+    .sub-title {
+        font-weight: $font-weight-medium;
+        font-size: $font-subtitle-size;
+        margin: 5px 0;
+    }
+
+    .content {
+        font-size: $font-standard-size;
+        margin: 5px 0;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}

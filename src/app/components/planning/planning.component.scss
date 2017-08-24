@@ -1,1 +1,124 @@
 @import '../../stylings/partial-classes/flex-box';
+@import '../../stylings/partial-classes/input-box';
+@import '../../stylings/partial-classes/material-card';
+
+@import '../../stylings/variables/shadow';
+@import '../../stylings/variables/color-theme';
+@import '../../stylings/variables/font';
+
+$tool-bar-bg: $primary-color;
+$tool-bar-font-color: $color-white;
+$tool-bar-font-weight: $font-weight-medium;
+
+app-planning {
+    width: 100%;
+}
+
+.planning {
+    @extend .flex-column;
+
+    width: 100%;
+    height: 100%;
+   
+    .tool-bar {
+        @extend .flex-row;
+        @extend .flex-center-verticle;
+
+        height: 40px;
+        box-shadow: $shadow-light;
+        padding: 0 20px;
+        background-color: $tool-bar-bg;
+
+        .quick-search {
+            @extend .flex-row;
+            @extend .flex-center-verticle;
+            
+            .title {
+                @extend .cursor-default;
+
+                color: $tool-bar-font-color;
+                font-weight: $tool-bar-font-weight;
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+
+    .content {
+        @extend .flex;
+        @extend .flex-column;
+
+        overflow-y: auto;
+
+        .backlog {
+            @extend .section;
+        }
+
+        .sprint {
+            @extend .section;
+        }
+    }
+}
+
+// use in the entire component
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.separator {
+    @extend .flex;
+}
+
+.material-icons {
+    @extend .icon
+}
+
+.icon {
+    @extend .cursor-pointer;
+
+    &:hover {
+        font-size: 30px;
+    }
+
+    color: $tool-bar-font-color;
+    margin: 0 10px;
+}
+
+.section {
+    @extend .flex;
+    
+    padding: 8px;
+    min-height: 200px;
+
+    .top {
+        @extend .header;
+
+        .sprint-details {
+            @extend .flex-column;
+
+            padding: 8px;
+        }
+    }
+
+    .cards-container {
+        @extend .flex-column;
+    }
+}
+
+.header {
+    @extend .flex-row;
+    @extend .flex-center-verticle;
+
+    .add-new {
+        color: $secondary-color;
+    }
+
+    height: 50px;
+}
+
+.item-card {
+    @extend .card;
+}
