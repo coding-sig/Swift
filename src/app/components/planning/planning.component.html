@@ -1,3 +1,48 @@
-<p>
-  planning works!
-</p>
+<div class="planning">
+  <div class="tool-bar">
+
+    <div class="quick-search">
+      <span class="title">Quick Search : </span>
+      <input type="text" class="app-input" placeholder="search here" ([value])="quickSearchText">
+      <i class="material-icons">search</i>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="setting">
+      <i class="material-icons">settings</i>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="sprint" *ngFor="let sprint of sprints">
+      <div class="top">
+        <div class="sprint-details">
+          <span class="sprint-name">{{ sprint.name }}</span>
+          <span class="end-date">{{ sprint.endDate }}</span>
+        </div>
+        <!--<div class="separator"></div>-->
+        <!--<i class="material-icons add-new">add_circle</i>-->
+      </div>
+      <div class="cards-container">
+        <div class="item-card" *ngFor="let item of sprint.items">
+          {{ item.id }}
+        </div>
+      </div>
+    </div>
+
+    <div class="backlog">
+      <div class="top">
+        <span>Backlog</span>
+      </div>
+      <div class="cards-container">
+        <div class="item-card" *ngFor="let item of backlog">
+          {{ item.id }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
