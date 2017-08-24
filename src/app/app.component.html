@@ -1,11 +1,21 @@
-<div class="app-body flex-column">
+<div class="app-body">
 
-  <div class="app-toolbar flex-row flex-center-verticle">
-    <img  class="app-icon" [src]="appIcon.url" [width]="appIcon.width" [height]="appIcon.height">
+  <div class="app-toolbar">
+    <img class="app-icon" [src]="appIcon.url" [width]="appIcon.width" [height]="appIcon.height">
     <div class="app-title">Swift</div>
+
+    <div class="nav-tabs">
+      <div class="tab" *ngFor="let tab of navTabModel" (click)="switchTab(tab.route)" [ngClass]="getActiveTab(tab.route)" routerLink="{{ tab.route }}">{{ tab.title }}</div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="user-profile">
+      <i class="material-icons user-picture">face</i>
+    </div>
   </div>
 
-  <div class="app-content flex">
+  <div class="app-content">
 
     <router-outlet></router-outlet>
 

@@ -10,7 +10,7 @@ import { DashBoardComponent } from './components/dash-board/dash-board.component
 const appRoutes: Routes = [
   { path: 'planning', component: PlanningComponent },
   { path: 'board', component: BoardComponent },
-  { path: 'dash-board', component: DashBoardComponent }
+  { path: 'dashboard', component: DashBoardComponent }
 ];
 
 @NgModule({
