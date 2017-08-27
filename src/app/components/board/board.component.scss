@@ -1,0 +1,13 @@
+@import '../../stylings/partial-classes/flex-box';
+@import '../../stylings/variables/main';
+
+.board-container {
+
+}
+
+.details-panel  {
+	width: 250px;
+	padding: 10px 15px;
+	height: calc(100vh - #{$toolbar-height} - #{$footer-height});
+	border: 1px solid rgba(0,0,0, .4);
+}
