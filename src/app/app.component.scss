@@ -1,50 +1,69 @@
 // partial styles
-@import './stylings/partial-classes/flex-box';
+// @import './stylings/partial-classes/flex-box';
 
 // app theme variables
 @import './stylings/variables/color-theme';
 @import './stylings/variables/shadow';
 @import './stylings/variables/font';
+@import './stylings/variables/main';
+@import './stylings/variables/resolution';
+
+// mixins 
+@import './stylings/mixins/respond';
+@import './stylings/mixins/flex';
+@import './stylings/mixins/flex-child';
 
 // component variables
 $content-bg-color: #e2e1e0;
-$user-profile-shadow: 2px 5px 4px rgba(0, 0, 0, 0.3), 4px 7px 9px rgba(0, 0, 0, 0.3);
 
 .app-body {
-    @extend .flex-column;
+    @include flex(column);
 
     height: 100vh;
     width: 100vw;
     position: absolute;
 
     .app-toolbar {
-        @extend .flex-row;
-        @extend .flex-center-verticle;
+        @include flex(row) {
+            align-items: center;
+        }
 
         padding: 0 20px;
-        height: 50px;
+        height: $toolbar-height;
         background: $primary-color-deep;
         color: $color-white;
 
-        .app-title {
-            font-size: 30px;
-            font-weight: 700;
-            padding: 0 15px;
+        .app-icon-container {
+            @include flex(row);
+            @include respond(600px) {
+                display: none;
+            }
+
+            .app-title {
+                font-size: 30px;
+                font-weight: 700;
+                padding: 0 15px;
+            }
         }
 
         .nav-tabs {
-            @extend .flex-row;
-            @extend .flex;
+            @include flex(row);
+            @include flex-child(1);
+            @include respond(550px) {
+                margin: 0 20px;
+                font-size: 14px;
+            }
 
             max-width: 400px;
             margin: 0 50px;
             height: 100%;
 
             .tab {
-                @extend .flex;
-                @extend .flex-row;
-                @extend .flex-center-verticle;
-                @extend .flex-center-horizontal;
+                @include flex-child(1);
+                @include flex(row) {
+                    align-items: center;
+                    justify-content: center;
+                }
 
                 &.active {
                     background-color: $secondary-color;
@@ -57,25 +76,28 @@ $user-profile-shadow: 2px 5px 4px rgba(0, 0, 0, 0.3), 4px 7px 9px rgba(0, 0, 0, 
                 cursor: pointer;
                 text-align: center;
                 outline: none;
+                padding: 0 10px;
             }
         }
 
         .user-profile {
-            width: 150px;
-            @extend .flex-row;
-            @extend .flex-center-verticle;
+            @extend .respondsive;
+            @include flex(row) {
+                align-items: center;
+            }
 
             .user-picture-frame {
-                @extend .flex-row;
-                @extend .flex-center-verticle;
-                @extend .flex-center-horizontal;
+                 @include flex(row) {
+                    align-items: center;
+                    justify-content: center;
+                }
 
                 width: 35px;
                 height: 35px;
                 border-radius: 50%;
                 margin: 0 10px 0 0;
                 background-color: #fff;
-                box-shadow: $user-profile-shadow;
+                box-shadow: $shadow-user-profile;
 
                 .user-picture {
                     width: 30px;
@@ -92,18 +114,32 @@ $user-profile-shadow: 2px 5px 4px rgba(0, 0, 0, 0.3), 4px 7px 9px rgba(0, 0, 0, 
     }
 
     .app-content {
-        @extend .flex;
+        @include flex-child(1);
+        @include respond($screen-small) {
+             max-height: calc(100% - #{$toolbar-height});
+        }
 
         background: $content-bg-color;
+        max-height: calc(100% - #{$toolbar-height} - #{$footer-height});
     }
 
     .app-footer {
+        @include respond($screen-small) {
+            display: none;
+        }
+
         width: 100%;
-        height: 40px;
+        height: $footer-height;
         background-color: $primary-color-deep;
     }
 
     .separator {
-        @extend .flex;
+        @include flex-child(1);
+    }
+
+    .respondsive {
+        @include respond(450px) {
+            display: none;
+        }
     }
 }

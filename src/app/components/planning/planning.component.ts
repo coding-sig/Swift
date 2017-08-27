@@ -14,9 +14,9 @@ export class PlanningComponent implements OnInit {
       id: 123,
       priority: `high`,
       owner: `owner 1`,
-      ownerPicUrl: ``,
+      ownerPicUrl: `../../../assets/user-profile/user-profile-spiderman.png`,
       status: `Done`,
-      type: `Nice To Have`,
+      type: `nice to have`,
       storySize: 4,
       progress: 0.8,
       title: `mock item 1, veryveryveryveryveryvery long`,
@@ -25,9 +25,9 @@ export class PlanningComponent implements OnInit {
       id: 122,
       priority: `low`,
       owner: `owner 2`,
-      ownerPicUrl: ``,
+      ownerPicUrl: `../../../assets/user-profile/user-profile-cap.png`,
       status: `To Do`,
-      type: `Bug`,
+      type: `bug`,
       storySize: 1,
       progress: 0,
       title: `mock item 1, veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryvery long`,
@@ -36,8 +36,8 @@ export class PlanningComponent implements OnInit {
       id: 121,
       priority: `high`,
       owner: `owner 3`,
-      ownerPicUrl: ``,
-      type: `Must Have`,
+      ownerPicUrl: `../../../assets/user-profile/batman-user-profile.png`,
+      type: `must have`,
       storySize: 4,
       progress: 0.3,
       status: `In Progress`,
@@ -70,6 +70,13 @@ export class PlanningComponent implements OnInit {
     122,
     121,
     120
+  ];
+
+  itemTypes: string[] = [
+    `bug`,
+    `nice to have`,
+    `must have`,
+    `consult`
   ];
 
   quickSearchText: string;

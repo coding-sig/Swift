@@ -1,9 +1,11 @@
 <div class="app-body">
 
   <div class="app-toolbar">
-    <img class="app-icon" [src]="appIcon.url" [width]="appIcon.width" [height]="appIcon.height">
-    <div class="app-title">Swift</div>
-
+    <div class="app-icon-container">
+      <img class="app-icon" [src]="appIcon.url" [width]="appIcon.width" [height]="appIcon.height">
+      <div class="app-title">Swift</div>
+    </div>
+    
     <div class="nav-tabs">
       <div class="tab" *ngFor="let tab of navTabModel" (click)="switchTab(tab.route)" [ngClass]="getActiveTab(tab.route)" routerLink="{{ tab.route }}">{{ tab.title }}</div>
     </div>

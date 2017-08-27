@@ -19,6 +19,16 @@ export class PlanningCardComponent implements OnInit {
     return this.item.priority;
   }
 
+  getItemType(): string {
+    switch (this.item.type) {
+      case `bug` : return `bug_report`;
+      case `nice to have` : return `build`;
+      case `must have` : return `new_releases`;
+      case `consult`: return `question_answer`;
+      default : return `new_releases`;
+    }
+  }
+
   onCardCliked () {
     this.onClicked.emit(this.item);
   }

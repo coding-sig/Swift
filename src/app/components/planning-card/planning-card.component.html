@@ -7,7 +7,9 @@
       <div class="title">{{ item.title }}</div>
       <div class="status-type-container">
         <div class="status">{{ item.status }}</div>
-        <div class="type">{{ item.type }}</div>
+        <div class="type">
+          <i class="material-icons">{{ getItemType() }}</i>
+        </div>
       </div>
     </div>
 
@@ -17,9 +19,7 @@
     </div>
 
     <div class="profile">
-      <div class="user-picture">
-        <img src="" alt="">
-      </div>
+      <img  class="user-picture" [src]="item.ownerPicUrl">
       <div class="story-size">{{ item.storySize }}</div>
     </div>
 

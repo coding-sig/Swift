@@ -1,12 +1,17 @@
 @import '../../stylings/partial-classes/material-card';
-@import '../../stylings/partial-classes/flex-box';
+// @import '../../stylings/partial-classes/flex-box';
 
 @import '../../stylings/variables/font';
 @import '../../stylings/variables/color-theme';
+@import '../../stylings/variables/resolution';
+
+@import '../../stylings/mixins/flex';
+@import '../../stylings/mixins/flex-child';
+@import '../../stylings/mixins/respond';
 
 .planning-card {
     @extend .card;
-    @extend .flex-row;
+    @include flex(row);
 
     height: 70px;
 
@@ -26,41 +31,94 @@
     }
 
     .content {
-        @extend .flex;
-        @extend .flex-row;
+        @include flex-child(1);
+        @include flex(row);
 
         padding: 8px;
+        max-width: calc(100% - 25px); // include the paddings 8px, and the priority bar 10px
 
         .item-details {
-            @extend .flex-column;
+            @include flex(column);
+            flex: 2;
+            min-width: 10px;
 
-           
             .title {
-                min-width: 150px;
-
-                
-                span {
-                     white-space: nowrap;
+                white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 margin: 0 0 8px 0;
-
-                }
             }
 
             .status-type-container {
-                @extend .flex-row;
+                @include flex(row) {
+                    justify-content: center;
+                };
 
                 .status {
                     background-color: $secondary-color;
                     color: $font-weight-bold;
+                    font-weight: $font-weight-bold;
                     box-shadow: $shadow-flat;
                     width: 100px;
                     padding: 5px;
                     text-align: center;
                 }
+
+                .type {
+                    margin: 0 10px;
+                }
             }
 
+        }
+
+        .progress {
+            @include respond($screen-small) {
+                display: none;
+            }
+
+            background-color: red;
+            width: 300px;
+
+            .bar {
+
+            }
+
+            .remaining-day {
+
+            }
+        }
+
+        .profile {
+            width: 100px;
+            position: relative;
+
+            .user-picture {
+                width: 45px;
+                height: 45px;
+                position: absolute;
+                top: 3px;
+                left: 45px;
+                border-radius: 50%;
+                box-shadow: $shadow-user-profile;
+                background-color: #fff;
+            }
+
+            .story-size {
+                @include flex(row) {
+                    align-items: center;
+                    justify-content: center;
+                }
+                background-color: $secondary-color;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                color: $color-black;
+                font-weight: $font-weight-bold;
+                font-size: 12px;
+                position: absolute;
+                top: 20px;
+                left: 25px;
+            }
         }
     }
 }
