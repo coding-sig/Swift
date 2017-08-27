@@ -1,6 +1,5 @@
 @import '../../stylings/partial-classes/flex-box';
 @import '../../stylings/partial-classes/input-box';
-@import '../../stylings/partial-classes/material-card';
 
 @import '../../stylings/variables/shadow';
 @import '../../stylings/variables/color-theme';
@@ -92,6 +91,7 @@ app-planning {
     
     padding: 8px;
     min-height: 200px;
+    margin: 0 0 10px 0;
 
     .top {
         @extend .header;
@@ -105,6 +105,12 @@ app-planning {
 
     .cards-container {
         @extend .flex-column;
+
+        overflow-y: auto;
+
+        app-planning-card {
+            @extend .flex;
+        }
     }
 }
 
@@ -117,8 +123,4 @@ app-planning {
     }
 
     height: 50px;
-}
-
-.item-card {
-    @extend .card;
 }

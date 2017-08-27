@@ -11,7 +11,10 @@
     <div class="separator"></div>
 
     <div class="user-profile">
-      <i class="material-icons user-picture">face</i>
+      <div class="user-picture-frame">
+         <img class="user-picture" [src]="userProfile.defaultPicUrl">
+      </div>
+      <div class="user-name">{{ userProfile.name }}</div>
     </div>
   </div>
 

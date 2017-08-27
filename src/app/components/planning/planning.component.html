@@ -3,7 +3,7 @@
 
     <div class="quick-search">
       <span class="title">Quick Search : </span>
-      <input type="text" class="app-input" placeholder="search here" ([value])="quickSearchText">
+      <input type="text" class="app-input" placeholder="search here..." ([value])="quickSearchText" #quickSearch>
       <i class="material-icons">search</i>
     </div>
 
@@ -26,9 +26,7 @@
         <!--<i class="material-icons add-new">add_circle</i>-->
       </div>
       <div class="cards-container">
-        <div class="item-card" *ngFor="let item of sprint.items">
-          {{ item.id }}
-        </div>
+        <app-planning-card *ngFor="let item of sprint.items" [item]="item" (onClicked)="onCardClicked($event)"></app-planning-card>
       </div>
     </div>
 

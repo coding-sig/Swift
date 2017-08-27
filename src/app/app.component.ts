@@ -9,10 +9,18 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  appIcon = {
-    url: `./assets/orange-logo.png`,
+  // todo: need to add typings to the model in beta
+  appIcon: any = {
+    url: `./assets/app-logo/orange-logo.png`,
     height: 30,
     width: 30
+  };
+
+  userProfile: any = {
+    name: `Picky User`,
+    id: `12345`,
+    picUrl: ``,
+    defaultPicUrl: `./assets/user-profile/batman-user-profile.png`
   };
 
   activeTab: string;

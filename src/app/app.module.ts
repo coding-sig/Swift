@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PlanningComponent } from './components/planning/planning.component';
 import { BoardComponent } from './components/board/board.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
+import { PlanningCardComponent } from './components/planning-card/planning-card.component';
 
 const appRoutes: Routes = [
   { path: 'planning', component: PlanningComponent },
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
     AppComponent,
     PlanningComponent,
     BoardComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    PlanningCardComponent
   ],
   imports: [
     BrowserModule,

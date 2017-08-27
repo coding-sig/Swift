@@ -1,0 +1,30 @@
+<div class="planning-card" (click)="onCardCliked()">
+  <div class="priority" [ngClass]="getItemPriority()"></div>
+
+  <div class="content">
+
+    <div class="item-details">
+      <div class="title">{{ item.title }}</div>
+      <div class="status-type-container">
+        <div class="status">{{ item.status }}</div>
+        <div class="type">{{ item.type }}</div>
+      </div>
+    </div>
+
+    <div class="progress">
+      <div class="bar"></div>
+      <div class="remaining-day"></div>
+    </div>
+
+    <div class="profile">
+      <div class="user-picture">
+        <img src="" alt="">
+      </div>
+      <div class="story-size">{{ item.storySize }}</div>
+    </div>
+
+  </div>
+
+
+
+</div>

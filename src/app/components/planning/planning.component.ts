@@ -16,7 +16,10 @@ export class PlanningComponent implements OnInit {
       owner: `owner 1`,
       ownerPicUrl: ``,
       status: `Done`,
-      title: `mock item 1`,
+      type: `Nice To Have`,
+      storySize: 4,
+      progress: 0.8,
+      title: `mock item 1, veryveryveryveryveryvery long`,
       description: `this is a mock item.`
     }, {
       id: 122,
@@ -24,13 +27,19 @@ export class PlanningComponent implements OnInit {
       owner: `owner 2`,
       ownerPicUrl: ``,
       status: `To Do`,
-      title: `mock item 1`,
+      type: `Bug`,
+      storySize: 1,
+      progress: 0,
+      title: `mock item 1, veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryvery long`,
       description: `this is a mock item.`
     }, {
       id: 121,
       priority: `high`,
       owner: `owner 3`,
       ownerPicUrl: ``,
+      type: `Must Have`,
+      storySize: 4,
+      progress: 0.3,
       status: `In Progress`,
       title: `mock item 1`,
       description: `this is a mock item.`
@@ -68,6 +77,10 @@ export class PlanningComponent implements OnInit {
   ngOnInit() {
     this.backlog = this.backlog.map(id => this.getItemById(id)).filter(item => item);
     this.sprints = this.sprints.map(sprint => this.getSprintItems(sprint));
+  }
+
+  onCardClicked (item) {
+    item.isClicked = true;
   }
 
   private getItemById(id: number): any {

@@ -1,0 +1,66 @@
+@import '../../stylings/partial-classes/material-card';
+@import '../../stylings/partial-classes/flex-box';
+
+@import '../../stylings/variables/font';
+@import '../../stylings/variables/color-theme';
+
+.planning-card {
+    @extend .card;
+    @extend .flex-row;
+
+    height: 70px;
+
+    .priority {
+        &.high {
+            background-color: #f00;
+        }
+        &.medium {
+            background-color: #ff8000;
+        }
+         &.low {
+            background-color: #76f439;
+        }
+        
+        width: 10px;
+        border-radius: 2px 0 0 2px;
+    }
+
+    .content {
+        @extend .flex;
+        @extend .flex-row;
+
+        padding: 8px;
+
+        .item-details {
+            @extend .flex-column;
+
+           
+            .title {
+                min-width: 150px;
+
+                
+                span {
+                     white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: 0 0 8px 0;
+
+                }
+            }
+
+            .status-type-container {
+                @extend .flex-row;
+
+                .status {
+                    background-color: $secondary-color;
+                    color: $font-weight-bold;
+                    box-shadow: $shadow-flat;
+                    width: 100px;
+                    padding: 5px;
+                    text-align: center;
+                }
+            }
+
+        }
+    }
+}
