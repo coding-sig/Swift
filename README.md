@@ -14,3 +14,6 @@ Logo 2
 
 Spec:
 https://docs.google.com/presentation/d/1geBugUJUnB92H8OJ4oLASrMIY8X2KBRRXylrN0K1wKA/edit#slide=id.g245d443f9f_0_67
+
+Color Themes: 
+https://docs.google.com/presentation/d/1ky25UjZPkzRbxRjSuvK_AdWuzU2AGEXfkY1av1NYmL0/edit?usp=sharing
