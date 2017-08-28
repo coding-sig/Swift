@@ -1,16 +1,18 @@
 <div class="app-body">
 
-  <div class="app-toolbar">
+  <div class="app-toolbar" [ngClass]="getThemeClassName()">
     <div class="app-icon-container">
       <img class="app-icon" [src]="appIcon.url" [width]="appIcon.width" [height]="appIcon.height">
       <div class="app-title">Swift</div>
     </div>
     
     <div class="nav-tabs">
-      <div class="tab" *ngFor="let tab of navTabModel" (click)="switchTab(tab.route)" [ngClass]="getActiveTab(tab.route)" routerLink="{{ tab.route }}">{{ tab.title }}</div>
+      <div class="tab" *ngFor="let tab of navTabModel" (click)="switchTab(tab.route)" [ngClass]="[getActiveTab(tab.route), getThemeClassName()]" routerLink="{{ tab.route }}">{{ tab.title }}</div>
     </div>
 
     <div class="separator"></div>
+
+    <button (click)="changeColorTheme()">Change Theme</button>
 
     <div class="user-profile">
       <div class="user-picture-frame">

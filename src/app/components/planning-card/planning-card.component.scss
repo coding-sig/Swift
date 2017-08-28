@@ -55,7 +55,7 @@
                 };
 
                 .status {
-                    background-color: $secondary-color;
+                    background-color: $dark-secondary-color;
                     color: $font-weight-bold;
                     font-weight: $font-weight-bold;
                     box-shadow: $shadow-flat;
@@ -99,8 +99,9 @@
                 top: 3px;
                 left: 45px;
                 border-radius: 50%;
-                box-shadow: $shadow-user-profile;
+                box-shadow: $shadow-user-profile-card;
                 background-color: #fff;
+                border: 3px solid #fff;
             }
 
             .story-size {
@@ -108,7 +109,7 @@
                     align-items: center;
                     justify-content: center;
                 }
-                background-color: $secondary-color;
+                background-color: $dark-secondary-color;
                 height: 30px;
                 width: 30px;
                 border-radius: 50%;

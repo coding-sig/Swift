@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs/Rx';
+import { AppThemeService } from '../../services/app-theme.service';
 
 @Component({
   selector: 'app-planning',
   templateUrl: './planning.component.html',
-  styleUrls: ['./planning.component.scss']
+  styleUrls: ['./planning.component.scss'],
+  providers: [AppThemeService]
 })
 export class PlanningComponent implements OnInit {
-
-  constructor() { }
 
   mockData: any[] = [
     {
@@ -80,14 +81,31 @@ export class PlanningComponent implements OnInit {
   ];
 
   quickSearchText: string;
+  appTheme: string;
+
+  constructor(
+    private themeService: AppThemeService
+  ) { 
+    const themeSubscription: Subject<string> = this.themeService.getColorTheme();
+    themeSubscription.subscribe(theme => {
+      console.log(theme);
+      this.appTheme = theme
+    });
+  }
+
 
   ngOnInit() {
     this.backlog = this.backlog.map(id => this.getItemById(id)).filter(item => item);
     this.sprints = this.sprints.map(sprint => this.getSprintItems(sprint));
+    
   }
 
   onCardClicked (item) {
     item.isClicked = true;
+  }
+
+  getThemeClassName(): string {
+    return this.appTheme;
   }
 
   private getItemById(id: number): any {

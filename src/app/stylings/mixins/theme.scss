@@ -1,0 +1,25 @@
+@mixin theme($theme) {
+    @each $color-key, $color-variants in $app-colors {
+
+        $light-color-value: map-get($color-variants, $theme);
+        
+        &.#{$color-key} {
+            background-color: $light-color-value;
+            color: #fff;
+                
+            &.strong {
+                background-color: darken($light-color-value, 20%);
+            }
+
+            &.weak {
+                background-color: lighten($light-color-value, 20%);
+            }
+
+            &.selected {
+                background-color: $light-color-value;
+            }
+        }
+    }
+
+    @content;
+}

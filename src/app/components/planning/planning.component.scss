@@ -1,4 +1,4 @@
-// @import '../../stylings/partial-classes/flex-box';
+@import '../../stylings/partial-classes/theme';
 @import '../../stylings/partial-classes/input-box';
 
 @import '../../stylings/mixins/flex';
@@ -9,7 +9,7 @@
 @import '../../stylings/variables/color-theme';
 @import '../../stylings/variables/font';
 
-$tool-bar-bg: $primary-color;
+$tool-bar-bg: $dark-primary-color;
 $tool-bar-font-color: $color-white;
 $tool-bar-font-weight: $font-weight-medium;
 
@@ -27,6 +27,7 @@ app-planning {
         @include flex(row) {
             align-items: center;
         };
+        @extend .primary;
 
         height: 40px;
         box-shadow: $shadow-light;
@@ -129,7 +130,7 @@ app-planning {
     };
 
     .add-new {
-        color: $secondary-color;
+        color: $dark-secondary-color;
     }
 
     height: 50px;

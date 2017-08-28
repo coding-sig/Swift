@@ -1,13 +1,37 @@
-// Shared scss for the app main theme colors
-// $primary-color: #9C27B0;
-// $primary-color-deep: #6A1B9A;
-// $secondary-color: #FFFF00;
+// dark theme
+$dark-primary-color: #50483f;
+$dark-primary-color-strong: #3c3732;
+$dark-primary-color-hover: rgba(60, 55, 50, 0.8);
+$dark-primary-color-font: #fff;
+$dark-primary-color-label: #ECB622;
 
-$primary-color: #50483f;
-$primary-color-deep: #3c3732;
-$secondary-color: #ECB622;
+$dark-secondary-color: #e07e3d;
+$dark-secondary-color-strong: rgb(236, 124, 41);
+$dark-secondary-color-hover: rgba(224, 126, 161, 0.8);
+$dark-secondary-color-font: #fff;
+$dark-secondary-color-label: #ECB622;
+// dark theme end
 
-$selected-primary: #e07e3d;
+// light theme
+$light-primary-color: rgb(156, 39, 176);
+$light-primary-color-strong: rgb(106, 27, 154);
+$light-primary-color-hover: rgba(156, 39, 176, 0.4);
+$light-primary-color-font: #fff;
+$light-primary-color-label: rgb(32, 167, 214);
 
-$hover-primary: rgba(239,168 ,121, 0.4);
+$light-secondary-color: rgb(32, 167, 214);
+$light-secondary-color-hover: rgba(224, 126, 161, 0.4);
+$light-secondary-color-font: #fff;
+// light theme end
+
+$app-colors: (
+    'primary': (
+        'light': rgb(156, 39, 176),
+        'dark': rgb(80, 72, 63)
+    ),
+    'secondary': (
+        'light': rgb(32, 167, 214),
+        'dark': rgb(60, 55, 50)
+    )
+);
 

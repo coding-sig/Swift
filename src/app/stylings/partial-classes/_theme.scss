@@ -1,0 +1,10 @@
+ @import '../variables/color-theme';
+ @import '../mixins/theme';
+ 
+.light-theme {
+    @include theme(light);
+}
+
+.dark-theme {
+    @include theme(dark);
+}

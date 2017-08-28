@@ -1,5 +1,5 @@
 // partial styles
-// @import './stylings/partial-classes/flex-box';
+@import './stylings/partial-classes/theme';
 
 // app theme variables
 @import './stylings/variables/color-theme';
@@ -15,6 +15,7 @@
 
 // component variables
 $content-bg-color: #e2e1e0;
+$variant: 'light';
 
 .app-body {
     @include flex(column);
@@ -27,11 +28,11 @@ $content-bg-color: #e2e1e0;
         @include flex(row) {
             align-items: center;
         }
+        @extend .primary;
 
         padding: 0 20px;
         height: $toolbar-height;
-        background: $primary-color-deep;
-        color: $color-white;
+        color: $dark-primary-color-font;
 
         .app-icon-container {
             @include flex(row);
@@ -66,12 +67,10 @@ $content-bg-color: #e2e1e0;
                 }
 
                 &.active {
-                    background-color: $selected-primary;
-                    color: #4b4b4b;
-                    // font-weight: $font-weight-bold
+                   @extend .secondary.selected;
                 }
                 &:hover {
-                    background-color: $hover-primary;
+                    @extend .secondary.weak;
                 }
 
                 height: 100%;
@@ -85,9 +84,11 @@ $content-bg-color: #e2e1e0;
         }
 
         .user-profile {
-            @extend .respondsive;
             @include flex(row) {
                 align-items: center;
+            }
+            @include respond(450px) {
+                display: none;
             }
 
             .user-picture-frame {
@@ -134,16 +135,10 @@ $content-bg-color: #e2e1e0;
 
         width: 100%;
         height: $footer-height;
-        background-color: $primary-color-deep;
+        background-color: $dark-primary-color-strong;
     }
 
     .separator {
         @include flex-child(1);
-    }
-
-    .respondsive {
-        @include respond(450px) {
-            display: none;
-        }
     }
 }
