@@ -1,17 +1,17 @@
 <div class="board-wrapper flex-row">
 	<div class="board-container flex-1">
 		Board title will appear here.
-		<div style="float: right">Buttons will appear here</div>
+		<div style="float: right"><i class="mdi mdi-settings"></i></div>
 		<div class="flex-row">
 			<div *ngFor="let column of mockColumns" class="column flex-1">
 				<div>{{column.title}}</div>
 				<div *ngFor="let card of column.cards" class="card">
 					<div class="flex-row">
 						<div class="flex-1">
-							<div>{{card.title}}</div>
+							<div class="card-title">{{card.title}}</div>
 							<div class="badge">{{card.storySize}}</div>
 						</div>
-						<img [src]="card.avatarUrl" height="50" width="50">
+						<img [src]="card.avatarUrl" height="50" width="50" class="card-avatar">
 					</div>	
 				</div>
 			</div>

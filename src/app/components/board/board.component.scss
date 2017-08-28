@@ -27,17 +27,58 @@
 
 .card {
 	box-shadow: 0 0 3px rgba(0,0,0,.4); 
+	border-radius: 3px;
 	padding: 10px 15px;
 	margin: 15px 10px;
+	cursor: pointer;
+	background-color: #fff;
+	transition: background-color 200ms ease-out;
+}
+
+.card:hover {
+	background-color: rgba(236, 124, 41, .17);
+}
+
+.card-title {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: #08589F;
+}
+
+.card-avatar {
+	border-radius: 50%;
+	border: 3px solid #fff;
+	box-shadow: 0 0 4px rgba(0,0,0,.35);
 }
 
 .badge {
 	background-color: #D2D2D2;
+	color: #4D4D4D;
+	font-weight: 700;
 	font-size: 12px;
-	border-radius: 100%;
+	border-radius: 50%;
 	display: inline-block;
 	padding: 4px 5px;
 	text-align: center;
 	vertical-align: middle;
-	width: 15px;
+	width: 14px;
 }
+
+.board-wrapper .mdi::before {
+	font-size: 1.5em;
+	color: #4D4D4D;
+}
+
+// dark theme
+// $dark-primary-color: #50483f;
+// $dark-primary-color-strong: #3c3732;
+// $dark-primary-color-hover: rgba(60, 55, 50, 0.8);
+// $dark-primary-color-font: #fff;
+// $dark-primary-color-label: #ECB622;
+
+// $dark-secondary-color: #e07e3d;
+// $dark-secondary-color-strong: rgb(236, 124, 41);
+// $dark-secondary-color-hover: rgba(224, 126, 161, 0.8);
+// $dark-secondary-color-font: #fff;
+// $dark-secondary-color-label: #ECB622;
+// dark theme end
