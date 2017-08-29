@@ -32,7 +32,7 @@
 	margin: 15px 10px;
 	cursor: pointer;
 	background-color: #fff;
-	transition: background-color 200ms ease-out;
+	transition: background-color 250ms ease-out;
 }
 
 .card:hover {
@@ -52,7 +52,7 @@
 }
 
 .badge {
-	background-color: #D2D2D2;
+	background-color: #D8D8D8;
 	color: #4D4D4D;
 	font-weight: 700;
 	font-size: 12px;
@@ -67,6 +67,29 @@
 .board-wrapper .mdi::before {
 	font-size: 1.5em;
 	color: #4D4D4D;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 3px;
+	transition: background-color 250ms ease-out, color 250ms ease-out;
+}
+
+.board-wrapper .mdi:hover::before {
+	color: #fff;
+	background-color: #4D4D4D;
+}
+
+.board-header {
+	display: flex;
+}
+
+.board-title {
+	font-size: 1.15em;
+	color: #4D4D4D;
+	padding: 6px 0;
+}
+
+.board-action-button-container {
+	// float: right;
 }
 
 // dark theme
