@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs/Rx';
+import { BehaviorSubject, Subject } from 'rxjs/Rx';
+
 import { AppThemeService } from '../../services/app-theme.service';
 
 @Component({
   selector: 'app-planning',
   templateUrl: './planning.component.html',
-  styleUrls: ['./planning.component.scss'],
-  providers: [AppThemeService]
+  styleUrls: ['./planning.component.scss']
 })
 export class PlanningComponent implements OnInit {
 
@@ -86,11 +86,12 @@ export class PlanningComponent implements OnInit {
   constructor(
     private themeService: AppThemeService
   ) { 
-    const themeSubscription: Subject<string> = this.themeService.getColorTheme();
+    const themeSubscription = this.themeService.getTheme();
     themeSubscription.subscribe(theme => {
       console.log(theme);
       this.appTheme = theme
     });
+    // this.appTheme = themeSubscription.getValue();
   }
 
 

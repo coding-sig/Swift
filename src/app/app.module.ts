@@ -9,6 +9,8 @@ import { DashBoardComponent } from './components/dash-board/dash-board.component
 import { PlanningCardComponent } from './components/planning-card/planning-card.component';
 import { BoardSettingsComponent } from './components/board/board-settings.component';
 
+import { AppThemeService } from './services/app-theme.service';
+
 const appRoutes: Routes = [
   { path: 'planning', component: PlanningComponent },
   { path: 'board', component: BoardComponent },
@@ -31,7 +33,7 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [],
+  providers: [AppThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
