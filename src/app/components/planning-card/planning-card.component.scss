@@ -1,17 +1,17 @@
 @import '../../stylings/partial-classes/material-card';
-// @import '../../stylings/partial-classes/flex-box';
 
 @import '../../stylings/variables/font';
 @import '../../stylings/variables/color-theme';
 @import '../../stylings/variables/resolution';
+@import '../../stylings/variables/main';
 
-@import '../../stylings/mixins/flex';
+@import '../../stylings/mixins/flex-container';
 @import '../../stylings/mixins/flex-child';
 @import '../../stylings/mixins/respond';
 
 .planning-card {
     @extend .card;
-    @include flex(row);
+    @include flex-container(row);
 
     height: 70px;
 
@@ -32,13 +32,13 @@
 
     .content {
         @include flex-child(1);
-        @include flex(row);
+        @include flex-container(row);
 
         padding: 8px;
         max-width: calc(100% - 25px); // include the paddings 8px, and the priority bar 10px
 
         .item-details {
-            @include flex(column);
+            @include flex-container(column);
             flex: 2;
             min-width: 10px;
 
@@ -50,8 +50,8 @@
             }
 
             .status-type-container {
-                @include flex(row) {
-                    justify-content: center;
+                @include flex-container(row) {
+                    // justify-content: center;
                 };
 
                 .status {
@@ -72,15 +72,38 @@
         }
 
         .progress {
-            @include respond($screen-small) {
+            @include respond(#{$screen-small} + #{$side-container-width}) {
                 display: none;
             }
-
-            background-color: red;
+            @include flex-container(column) {
+                align-items: center;
+                justify-content: center;
+            }
+    
             width: 300px;
 
             .bar {
+                @include flex-container(row);
 
+                width: 100%;
+                height: 15px;
+                border-radius: 50px;
+                box-shadow: inset $shadow-light;
+                margin: 10px 0;
+
+                .complete {
+                    @include flex-child(4);
+
+                    border-radius: 50px 0 0 50px;
+                    background-color: greenyellow;
+                    // box-shadow: inset $shadow-light;
+                }
+
+                .incomplete {
+                    @include flex-child(1);
+
+                    border-radius: 50px 0 0 50px;
+                }
             }
 
             .remaining-day {
@@ -105,7 +128,7 @@
             }
 
             .story-size {
-                @include flex(row) {
+                @include flex-container(row) {
                     align-items: center;
                     justify-content: center;
                 }

@@ -1,13 +1,14 @@
 @import '../../stylings/partial-classes/theme';
 @import '../../stylings/partial-classes/input-box';
 
-@import '../../stylings/mixins/flex';
+@import '../../stylings/mixins/flex-container';
 @import '../../stylings/mixins/flex-child';
 @import '../../stylings/mixins/respond';
 
 @import '../../stylings/variables/shadow';
 @import '../../stylings/variables/color-theme';
 @import '../../stylings/variables/font';
+@import '../../stylings/variables/main';
 
 $tool-bar-bg: $dark-primary-color;
 $tool-bar-font-color: $color-white;
@@ -18,53 +19,68 @@ app-planning {
 }
 
 .planning {
-    @include flex(column);
+    @include flex-container(row);
 
     width: 100%;
     height: 100%;
-   
-    .tool-bar {
-        @include flex(row) {
-            align-items: center;
-        };
-        @extend .primary;
 
-        height: 40px;
-        box-shadow: $shadow-light;
-        padding: 0 20px;
-        background-color: $tool-bar-bg;
+    .main-container {
+        @include flex-container(column); 
+        @include flex-child(5);
+        
+        overflow-x: auto;
 
-        .quick-search {
-            @include flex(row) {
+        .tool-bar {
+            @include flex-container(row) {
                 align-items: center;
             };
-            
-            .title {
-                @extend .cursor-default;
-                @include respond(450px) {
-                    display: none;
+            @extend .primary;
+    
+            height: 40px;
+            box-shadow: $shadow-light;
+            padding: 0 20px;
+            background-color: $tool-bar-bg;
+    
+            .quick-search {
+                @include flex-container(row) {
+                    align-items: center;
+                };
+                
+                .title {
+                    @extend .cursor-default;
+                    @include respond(450px + #{$side-container-width}) {
+                        display: none;
+                    }
+    
+                    color: $tool-bar-font-color;
+                    font-weight: $tool-bar-font-weight;
+                    margin: 0 10px 0 0;
                 }
-
-                color: $tool-bar-font-color;
-                font-weight: $tool-bar-font-weight;
-                margin: 0 10px 0 0;
+            }
+        }
+    
+        .content {
+            @include flex-child(1);
+            @include flex-container(column);
+    
+            overflow-y: auto;
+    
+            .backlog {
+                @extend .section;
+            }
+    
+            .sprint {
+                @extend .section;
             }
         }
     }
-
-    .content {
+   
+    .side-container {
         @include flex-child(1);
-        @include flex(column);
-
-        overflow-y: auto;
-
-        .backlog {
-            @extend .section;
-        }
-
-        .sprint {
-            @extend .section;
-        }
+        min-width: $side-container-width;
+        padding: 10px 15px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        box-shadow: inset $shadow-deep;
     }
 }
 
@@ -100,23 +116,24 @@ app-planning {
     @include flex-child(1);
     
     padding: 8px;
-    min-height: 200px;
+    // min-height: 200px;
     margin: 0 0 10px 0;
 
     .top {
         @extend .header;
 
         .sprint-details {
-            @include flex(column);
+            @include flex-container(column);
 
             padding: 8px;
         }
     }
 
     .cards-container {
-        @include flex(column);
+        @include flex-container(column);
 
         overflow-y: auto;
+        max-height: 300px;
 
         app-planning-card {
             @include flex-child(1);
@@ -125,7 +142,7 @@ app-planning {
 }
 
 .header {
-    @include flex(row) {
+    @include flex-container(row) {
         align-items: center;
     };
 

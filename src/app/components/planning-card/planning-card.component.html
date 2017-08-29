@@ -6,25 +6,25 @@
     <div class="item-details">
       <div class="title">{{ item.title }}</div>
       <div class="status-type-container">
-        <div class="status">{{ item.status }}</div>
+        <div class="status" *ngIf="item.status">{{ item.status }}</div>
         <div class="type">
           <i class="material-icons">{{ getItemType() }}</i>
         </div>
       </div>
     </div>
 
-    <div class="progress">
-      <div class="bar"></div>
-      <div class="remaining-day"></div>
+    <div class="progress" *ngIf="item.progress">
+      <div class="bar">
+        <div class="complete"></div>
+        <div class="incomplete"></div>
+      </div>
+      <div class="remaining-day">4 day(s) remaining</div>
     </div>
 
-    <div class="profile">
+    <div class="profile" *ngIf="item.storySize">
       <img  class="user-picture" [src]="item.ownerPicUrl">
       <div class="story-size">{{ item.storySize }}</div>
     </div>
 
   </div>
-
-
-
 </div>

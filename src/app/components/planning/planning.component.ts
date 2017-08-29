@@ -30,7 +30,7 @@ export class PlanningComponent implements OnInit {
       status: `To Do`,
       type: `bug`,
       storySize: 1,
-      progress: 0,
+      progress: 0.1,
       title: `mock item 1, veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryvery long`,
       description: `this is a mock item.`
     }, {
@@ -87,16 +87,12 @@ export class PlanningComponent implements OnInit {
     private themeService: AppThemeService
   ) { 
     const themeSubscription = this.themeService.getTheme();
-    themeSubscription.subscribe(theme => {
-      console.log(theme);
-      this.appTheme = theme
-    });
-    // this.appTheme = themeSubscription.getValue();
+    themeSubscription.subscribe(theme => this.appTheme = theme);
   }
 
 
   ngOnInit() {
-    this.backlog = this.backlog.map(id => this.getItemById(id)).filter(item => item);
+    this.backlog = this.backlog.map(id => this.getBacklogItemById(id)).filter(item => item);
     this.sprints = this.sprints.map(sprint => this.getSprintItems(sprint));
     
   }
@@ -111,6 +107,15 @@ export class PlanningComponent implements OnInit {
 
   private getItemById(id: number): any {
     return this.mockData.find( item => item.id === id);
+  }
+
+  private getBacklogItemById(id: number): any {
+    const item = this.mockData.find( item => item.id === id);
+    return item ? {
+      title: item.title,
+      priority: item.priority,
+      type: item.type
+    } : '';
   }
 
   private getSprintItems(sprint: any): any {

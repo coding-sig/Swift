@@ -10,7 +10,7 @@
 
 // mixins
 @import './stylings/mixins/respond';
-@import './stylings/mixins/flex';
+@import './stylings/mixins/flex-container';
 @import './stylings/mixins/flex-child';
 
 // component variables
@@ -18,14 +18,14 @@ $content-bg-color: #e2e1e0;
 $variant: 'light';
 
 .app-body {
-    @include flex(column);
+    @include flex-container(column);
 
     height: 100vh;
     width: 100vw;
     position: absolute;
 
     .app-toolbar {
-        @include flex(row) {
+        @include flex-container(row) {
             align-items: center;
         }
         @extend .primary.strong;
@@ -35,7 +35,7 @@ $variant: 'light';
         color: $dark-primary-color-font;
 
         .app-icon-container {
-            @include flex(row);
+            @include flex-container(row);
             @include respond(600px) {
                 display: none;
             }
@@ -48,7 +48,7 @@ $variant: 'light';
         }
 
         .nav-tabs {
-            @include flex(row);
+            @include flex-container(row);
             @include flex-child(1);
             @include respond(550px) {
                 margin: 0 20px;
@@ -61,7 +61,7 @@ $variant: 'light';
 
             .tab {
                 @include flex-child(1);
-                @include flex(row) {
+                @include flex-container(row) {
                     align-items: center;
                     justify-content: center;
                 }
@@ -84,7 +84,7 @@ $variant: 'light';
         }
 
         .user-profile {
-            @include flex(row) {
+            @include flex-container(row) {
                 align-items: center;
             }
             @include respond(450px) {
@@ -92,7 +92,7 @@ $variant: 'light';
             }
 
             .user-picture-frame {
-                 @include flex(row) {
+                 @include flex-container(row) {
                     align-items: center;
                     justify-content: center;
                 }
