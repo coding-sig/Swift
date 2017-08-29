@@ -1,7 +1,15 @@
 <div class="board-wrapper flex-row">
 	<div class="board-container flex-1">
-		Board title will appear here.
-		<div style="float: right"><i class="mdi mdi-settings"></i></div>
+		<div class="board-header">
+			<div class="board-title flex-1">
+				Board title will appear here.
+			</div>
+
+			<div class="board-action-button-container">
+				<i class="mdi mdi-fullscreen"></i>
+				<i class="mdi mdi-settings" routerLink="/board-settings"></i>
+			</div>
+		</div>
 		<div class="flex-row">
 			<div *ngFor="let column of mockColumns" class="column flex-1">
 				<div>{{column.title}}</div>
