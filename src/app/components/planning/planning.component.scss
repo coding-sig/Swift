@@ -39,7 +39,8 @@ app-planning {
             height: 40px;
             box-shadow: $shadow-light;
             padding: 0 20px;
-            background-color: $tool-bar-bg;
+            z-index: 2; // for shadow
+
     
             .quick-search {
                 @include flex-container(row) {
