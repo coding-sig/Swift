@@ -28,7 +28,7 @@ $variant: 'light';
         @include flex(row) {
             align-items: center;
         }
-        @extend .primary;
+        @extend .primary.strong;
 
         padding: 0 20px;
         height: $toolbar-height;
@@ -132,6 +132,7 @@ $variant: 'light';
         @include respond($screen-small) {
             display: none;
         }
+         @extend .primary.strong;
 
         width: 100%;
         height: $footer-height;

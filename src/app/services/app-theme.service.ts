@@ -1,33 +1,32 @@
-import { Subject } from 'rxjs/Rx';
+import { BehaviorSubject, Observable } from 'rxjs/Rx';
 import { Injectable } from '@angular/core';
 // import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AppThemeService {
 
-  private colorThemeSubject: Subject<string>;
-  private colorTheme: string;
+  private _theme: BehaviorSubject<string> = new BehaviorSubject(String(`light-theme`));;
+  private colorTheme: string = `light-theme`;
 
   constructor() { 
-    this.colorThemeSubject = new Subject();
-    this.colorTheme = 'light-theme'; // default theme
+    this.colorTheme = 'light-theme'; // initial value
   }
  
-  getColorTheme() {
-    return this.colorThemeSubject;
+  getTheme(): Observable<string> {
+    return this._theme.asObservable();
   }
 
-  setColorTheme(theme: string) {
+  setTheme(theme: string) {
     this.colorTheme = theme;
-    this.colorThemeSubject.next(this.colorTheme);
+    this._theme.next(this.colorTheme);
   }
 
-  changeColorTheme() {
+  changeTheme() {
     if (this.colorTheme === `light-theme`) {
-      this.setColorTheme(`dark-theme`);
+      this.setTheme(`dark-theme`);
       return;
     }
-    this.setColorTheme(`light-theme`);
+    this.setTheme(`light-theme`);
   }
 
 }

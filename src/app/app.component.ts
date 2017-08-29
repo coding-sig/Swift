@@ -1,17 +1,15 @@
-import { Subject } from 'rxjs/Rx';
-import { AppThemeService } from './services/app-theme.service';
+import { BehaviorSubject, Subject } from 'rxjs/Rx';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 
-import './services/app-theme.service';
+import { AppThemeService } from './services/app-theme.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [AppThemeService]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   // todo: need to add typings to the model in beta
@@ -49,8 +47,8 @@ export class AppComponent {
     private router: Router,
     private themeService: AppThemeService
   ) {
-    const themeSubcription: Subject<string> = this.themeService.getColorTheme();
-    themeSubcription.subscribe(theme => this.appTheme = theme);
+    const themeSubscription = this.themeService.getTheme();
+    themeSubscription.subscribe(theme => this.appTheme = theme);
   }
 
   getActiveTab(tabName: string) {
@@ -62,7 +60,7 @@ export class AppComponent {
   }
 
   changeColorTheme() {
-    return this.themeService.changeColorTheme();
+    return this.themeService.changeTheme();
   }
 
   getThemeClassName(): string {

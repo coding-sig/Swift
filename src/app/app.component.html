@@ -12,10 +12,8 @@
 
     <div class="separator"></div>
 
-    <button (click)="changeColorTheme()">Change Theme</button>
-
     <div class="user-profile">
-      <div class="user-picture-frame">
+      <div class="user-picture-frame" (click)="changeColorTheme()">
          <img class="user-picture" [src]="userProfile.defaultPicUrl">
       </div>
       <div class="user-name">{{ userProfile.name }}</div>
@@ -28,5 +26,5 @@
 
   </div>
 
-  <div class="app-footer"></div>
+  <div class="app-footer" [ngClass]="getThemeClassName()"></div>
 </div>
