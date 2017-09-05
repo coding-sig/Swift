@@ -3,6 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabViewModule } from 'primeng/primeng';
+import { InputTextModule } from 'primeng/primeng';
+import { DragDropModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { PlanningComponent } from './components/planning/planning.component';
@@ -32,7 +34,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    TabViewModule,
+    TabViewModule, InputTextModule, DragDropModule,
     RouterModule.forRoot(
       appRoutes
     )
