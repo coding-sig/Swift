@@ -22,6 +22,10 @@
             <span class="end-date">{{ sprint.endDate }}</span>
           </div>
 
+          <div class="button-container">
+           
+          </div>
+
         </div>
         <div class="cards-container">
           <app-planning-card *ngFor="let item of sprint.items" [item]="item" (onClicked)="onCardClicked($event)"></app-planning-card>

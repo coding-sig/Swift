@@ -1,13 +1,13 @@
-@import '../../stylings/partial-classes/material-card';
+@import '../../../stylings/partial-classes/material-card';
 
-@import '../../stylings/variables/font';
-@import '../../stylings/variables/color-theme';
-@import '../../stylings/variables/resolution';
-@import '../../stylings/variables/main';
+@import '../../../stylings/variables/font';
+@import '../../../stylings/variables/color-theme';
+@import '../../../stylings/variables/resolution';
+@import '../../../stylings/variables/main';
 
-@import '../../stylings/mixins/flex-container';
-@import '../../stylings/mixins/flex-child';
-@import '../../stylings/mixins/respond';
+@import '../../../stylings/mixins/flex-container';
+@import '../../../stylings/mixins/flex-child';
+@import '../../../stylings/mixins/respond';
 
 .planning-card {
     @extend .card;
@@ -119,7 +119,6 @@
                 width: 45px;
                 height: 45px;
                 position: absolute;
-                top: 3px;
                 left: 45px;
                 border-radius: 50%;
                 box-shadow: $shadow-user-profile-card;
@@ -140,7 +139,7 @@
                 font-weight: $font-weight-bold;
                 font-size: 12px;
                 position: absolute;
-                top: 20px;
+                top: 15px;
                 left: 25px;
             }
         }

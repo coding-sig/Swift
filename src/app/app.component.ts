@@ -31,13 +31,13 @@ export class AppComponent {
   navTabModel: any[] = [
     {
       title: `DASHBOARD`,
-      route: `/dashboard`
+      route: `dashboard`
     }, {
       title: `PLANNING`,
-      route: `/planning`
+      route: `planning`
     }, {
       title: `BOARD`,
-      route: `/board`
+      route: `board`
     }
   ];
 
