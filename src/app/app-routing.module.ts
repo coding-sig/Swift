@@ -5,7 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 export const routes: Routes = [
     { path: '', redirectTo: 'landing', pathMatch: 'full' },
     { path: 'planning', loadChildren: './components/planning/planning.module#PlanningModule' },
-    { path: 'board', loadChildren: './components/board/board.module#BoardModule' }
+    { path: 'board', loadChildren: './components/board/board.module#BoardModule' },
+    { path: 'dashboard', loadChildren: './components/dashboard/dashboard.module#DashboardModule'}
   ];
   
 @NgModule({
