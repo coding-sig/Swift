@@ -25,10 +25,10 @@
 			</section>
 		</p-tabPanel>
 		<p-tabPanel header="Column">
-			<div class="columns-wrapper flex-row">
-				<div class="column" *ngFor="let column of mockColumnConfig">
+			<div class="columns-wrapper flex-row" pDroppable="col-card" (onDrop)="drop($event)">
+				<div class="column" *ngFor="let column of mockColumnConfig" pDraggable="col-card" dragHandle=".mdi-drag">
 					<div class="icon-wrapper">
-						<div class="drag-icon-wrapper" pDraggable="dd"><i class="mdi mdi-drag"></i></div>
+						<div class="drag-icon-wrapper"><i class="mdi mdi-drag"></i></div>
 						<span class="spacing"></span>
 						<i class="mdi mdi-delete"></i>
 					</div>

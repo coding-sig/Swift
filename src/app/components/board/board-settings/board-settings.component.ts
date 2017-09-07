@@ -20,6 +20,11 @@ export class BoardSettingsComponent implements OnInit {
 
 	unmappedStatuses = [ 'QA TEST', 'LINTING' ];
 
+	drop(event) {
+		console.log(event);
+		window.alert('Drop event' + event);
+	}
+
 	ngOnInit() {
 	}
 
