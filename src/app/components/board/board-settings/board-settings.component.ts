@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TabViewModule } from 'primeng/primeng';
 import { InputTextModule } from 'primeng/primeng';
-import {DragDropModule} from 'primeng/primeng';
+import { DragDropModule } from 'primeng/primeng';
 
 @Component({
 	selector: 'app-board-settings',

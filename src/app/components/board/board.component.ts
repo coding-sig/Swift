@@ -34,6 +34,22 @@ export class BoardComponent implements OnInit {
 			]
 		}
 	];
+
+	draggedItem: {}
+
+	dragStart(event: object, item: object) {
+		this.draggedItem = item;
+	}
+
+	dragEnd(event: object) {
+		this.draggedItem = null;
+	}
+
+	drop(event: object) {
+		this.draggedItem = null;
+		console.log(event);
+	}
+
 	ngOnInit() {
 	}
 
