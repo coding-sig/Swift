@@ -92,6 +92,40 @@
 	// float: right;
 }
 
+.details-panel .avatar-position{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.status-label{
+	display: inline-block;
+    line-height: 1;
+	padding: 5px;
+    min-width: 3em;
+    text-align: center;
+    border: 0 solid transparent;
+    border-radius: .28571429rem;
+    color: black;
+	font-size: 12px;
+	float: right;
+    position: relative;
+    right: 20%;
+}
+
+.priority-label{
+	float: right;
+	position: relative;
+}
+
+.white{
+	background-color: white
+}
+
+.yellow {
+	background-color: rgba(255, 255, 0, 0.85);
+}
+
+
 // dark theme
 // $dark-primary-color: #50483f;
 // $dark-primary-color-strong: #3c3732;

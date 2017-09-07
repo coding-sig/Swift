@@ -34,7 +34,7 @@ export class BoardComponent implements OnInit {
 			]
 		}
 	];
-
+	
 	draggedItem: {}
 
 	dragStart(event: object, item: object) {
@@ -49,6 +49,8 @@ export class BoardComponent implements OnInit {
 		this.draggedItem = null;
 		console.log(event);
 	}
+
+	hero = 'assets/user-profile/user-profile-spiderman.png'
 
 	ngOnInit() {
 	}
