@@ -63,6 +63,21 @@ export class PlanningComponent implements OnInit {
       ],
       isOngoing: true,
       isCollapsed: false
+    }, {
+      id: 334,
+      name: `sprint 2`,
+      cadence: 2,
+      progress: 80.1,
+      startDate: `2017/08/25`,
+      endDate: `2017/09/08`,
+      items: [
+        123,
+        122,
+        121,
+        120
+      ],
+      isOngoing: false,
+      isCollapsed: false
     }
   ];
 
@@ -103,6 +118,11 @@ export class PlanningComponent implements OnInit {
 
   getThemeClassName(): string {
     return this.appTheme;
+  }
+
+  onCardDragStart(e) {
+    console.log(e)
+
   }
 
   private getItemById(id: number): any {

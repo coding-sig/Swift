@@ -23,12 +23,12 @@
           </div>
 
           <div class="button-container">
-           
+
           </div>
 
         </div>
-        <div class="cards-container">
-          <app-planning-card *ngFor="let item of sprint.items" [item]="item" (onClicked)="onCardClicked($event)"></app-planning-card>
+        <div class="cards-container" pDroppable="cards">
+          <app-planning-card *ngFor="let item of sprint.items" [item]="item" (onClicked)="onCardClicked($event)" pDraggable="cards" dragHandle=".user-picture" (onDragStart)="onCardDragStart($event)"></app-planning-card>
         </div>
       </div>
 
@@ -36,8 +36,8 @@
         <div class="top">
           <span>Backlog</span>
         </div>
-        <div class="cards-container">
-          <app-planning-card *ngFor="let item of backlog" [item]="item" (onClicked)="onCardClicked($event)"></app-planning-card>
+        <div class="cards-container" pDroppable="cards">
+          <app-planning-card *ngFor="let item of backlog" [item]="item" (onClicked)="onCardClicked($event)" pDraggable="cards"  dragHandle=".user-picture"></app-planning-card>
         </div>
       </div>
     </div>
