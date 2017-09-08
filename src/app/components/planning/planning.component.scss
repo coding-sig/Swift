@@ -114,19 +114,35 @@ app-planning {
 }
 
 .section {
-    @include flex-child(1);
-    
     padding: 8px;
-    // min-height: 200px;
-    margin: 0 0 10px 0;
 
     .top {
         @extend .header;
+
+        .toggle-container {
+            width: 30px;
+            text-align: center;
+
+            .material-icons.toggle-icon {
+                color: #000;
+                width: 100%;
+                margin: 0;
+            }
+        }
 
         .sprint-details {
             @include flex-container(column);
 
             padding: 8px;
+        }
+
+        i.material-icons.running-sprint-icon {
+            color: #000;
+            cursor: default;
+
+            &:hover {
+                font-size: 24px;
+            }
         }
     }
 
@@ -151,5 +167,5 @@ app-planning {
         color: $dark-secondary-color;
     }
 
-    height: 50px;
+    height: 45px;
 }

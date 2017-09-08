@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs/Rx';
 
 import { AppThemeService } from '../../services/app-theme.service';
+import { PlanningService } from './planning.service';
 
 @Component({
   selector: 'app-planning',
@@ -99,17 +100,17 @@ export class PlanningComponent implements OnInit {
   appTheme: string;
 
   constructor(
-    private themeService: AppThemeService
+    private themeService: AppThemeService,
+    private planningService: PlanningService
   ) { 
     const themeSubscription = this.themeService.getTheme();
     themeSubscription.subscribe(theme => this.appTheme = theme);
   }
 
-
   ngOnInit() {
     this.backlog = this.backlog.map(id => this.getBacklogItemById(id)).filter(item => item);
     this.sprints = this.sprints.map(sprint => this.getSprintItems(sprint));
-    
+    this.planningService.checkOngoingSprint(this.sprints);
   }
 
   onCardClicked (item) {
@@ -120,9 +121,16 @@ export class PlanningComponent implements OnInit {
     return this.appTheme;
   }
 
+  getSprintCollapseStatus(isCollapsed: boolean): string {
+    return isCollapsed ? 'expand_more' : 'expand_less';
+  }
+
+  toggleSprintCollapse(sprint: any) {
+    sprint.isCollapsed = !sprint.isCollapsed;
+  }
+
   onCardDragStart(e) {
     console.log(e)
-
   }
 
   private getItemById(id: number): any {

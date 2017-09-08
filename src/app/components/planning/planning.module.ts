@@ -7,6 +7,8 @@ import { PlanningRoutingModule } from './planning-routing.module';
 import { PlanningComponent } from './planning.component'; 
 import { PlanningCardComponent } from './planning-card/planning-card.component';
 
+import { PlanningService } from './planning.service';
+
 @NgModule({
     imports: [
          CommonModule,
@@ -18,6 +20,8 @@ import { PlanningCardComponent } from './planning-card/planning-card.component';
         PlanningComponent,
         PlanningCardComponent
      ],
-     providers: []
+     providers: [
+         PlanningService
+     ]
 })
 export class PlanningModule { };

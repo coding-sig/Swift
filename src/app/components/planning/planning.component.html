@@ -17,17 +17,24 @@
     <div class="content">
       <div class="sprint" *ngFor="let sprint of sprints">
         <div class="top">
+
+          <div class="toggle-container" (click)="toggleSprintCollapse(sprint)">
+            <i class="material-icons toggle-icon">{{ getSprintCollapseStatus(sprint.isCollapsed) }}</i>
+          </div>
+
           <div class="sprint-details">
             <span class="sprint-name">{{ sprint.name }}</span>
             <span class="end-date">{{ sprint.endDate }}</span>
           </div>
+          
+          <i class="material-icons running-sprint-icon" *ngIf="sprint.isOngoing">directions_running</i>
 
           <div class="button-container">
 
           </div>
 
         </div>
-        <div class="cards-container" pDroppable="cards">
+        <div class="cards-container" *ngIf="!sprint.isCollapsed" pDroppable="cards">
           <app-planning-card *ngFor="let item of sprint.items" [item]="item" (onClicked)="onCardClicked($event)" pDraggable="cards" dragHandle=".user-picture" (onDragStart)="onCardDragStart($event)"></app-planning-card>
         </div>
       </div>
