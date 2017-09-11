@@ -1,0 +1,102 @@
+@import '../../stylings/mixins/flex-container';
+@import '../../stylings/mixins/flex-child';
+@import '../../stylings/mixins/respond';
+
+@import '../../stylings/variables/shadow';
+@import '../../stylings/variables/color-theme';
+@import '../../stylings/variables/font';
+@import '../../stylings/variables/main';
+@import '../../stylings/variables/resolution';
+
+$section-bg-color: #fff;
+$section-font-size-title: 20px; 
+
+.project-setting {
+    @include flex-container(column) {
+        align-items: center;
+        justify-content: center;
+    }
+
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+
+    .section {
+        @include flex-container(column);
+
+        background-color: $section-bg-color;
+        padding: 8px;
+        height: 90%;
+        width: 90%;
+        min-height: 350px;
+        box-shadow: $shadow-light;
+        border-radius: 3px;
+
+        .title {
+            font-size: $font-title-size;
+            font-weight: 500;
+
+        }
+
+        .description {
+            overflow-y: auto;
+
+        }
+
+        .content {
+            @include flex-child(1);
+
+            &.columns {
+                @include flex-container(row) {
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .column {
+                    @include flex-child(1);
+                    @include flex-container(column) {
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                }
+            }
+
+            &.rows {
+                @include flex-container(column);
+
+                .row {
+                    @include flex-child(1);
+                }
+            }
+
+        }
+
+        .footer {
+            // @include flex-container(row) {
+            //     align-items: center;
+            //     justify-content: right;
+            // }
+            text-align: right;
+            height: 30px;
+            padding: 5px;
+        }
+    }
+
+    .mode-details {
+
+        max-width: 400px;
+
+        .icon {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+
+    }
+
+    
+
+
+}

@@ -9,47 +9,64 @@
 
       <div class="separator"></div>
 
-      <div class="setting">
-        <i class="material-icons">settings</i>
-      </div>
+      <button pButton type="button" icon="fa-plus" label="Add Sprint" (click)="displayAddSprintDialog()"></button>
+
     </div>
 
     <div class="content">
-      <div class="sprint" *ngFor="let sprint of sprints">
-        <div class="top">
+      <div class="section" *ngFor="let sprint of sprints">
+        <div class="top" [ngClass]="{'isExpand': !sprint.isCollapsed}" >
 
-          <div class="toggle-container" (click)="toggleSprintCollapse(sprint)">
-            <i class="material-icons toggle-icon">{{ getSprintCollapseStatus(sprint.isCollapsed) }}</i>
+          <div class="toggle-container" [ngClass]="{'isExpand': !backlog.isCollapsed}" (click)="toggleSectionCollapse(sprint)">
+            <i class="material-icons toggle-icon">{{ getSectionCollapseStatus(sprint.isCollapsed) }}</i>
           </div>
 
-          <div class="sprint-details">
-            <span class="sprint-name">{{ sprint.name }}</span>
-            <span class="end-date">{{ sprint.endDate }}</span>
+          <div class="details">
+            <span>{{ sprint.name }}</span>
+            <span>{{ sprint.endDate }}</span>
           </div>
-          
-          <i class="material-icons running-sprint-icon" *ngIf="sprint.isOngoing">directions_running</i>
+
+          <div class="status">
+            <i class="material-icons running-sprint-icon" *ngIf="sprint.isOnGoing">directions_running</i>
+          </div>
 
           <div class="button-container">
-
+            <button class="header-button" *ngFor="let sprintBtn of (planningButtonsModel | buttonFilter: 'sprint': sprint)" pButton type="button"
+              [icon]="sprintBtn.icon" [label]="sprintBtn.label" (click)="sprintBtn.command(sprint.id)"></button>
+            <p-splitButton class="header-menu-button" label="Add Item" icon="fa-plus" append-to="body" (click)="displayAddItemDialog(sprint.id)"
+              [model]="getSectionMenuButtonModel('sprint')"></p-splitButton>
           </div>
 
         </div>
         <div class="cards-container" *ngIf="!sprint.isCollapsed" pDroppable="cards">
-          <app-planning-card *ngFor="let item of sprint.items" [item]="item" (onClicked)="onCardClicked($event)" pDraggable="cards" dragHandle=".user-picture" (onDragStart)="onCardDragStart($event)"></app-planning-card>
+          <app-planning-card *ngFor="let item of sprint.items" [item]="item" (onClicked)="onCardClicked($event)" pDraggable="cards"
+            dragHandle=".user-picture" (onDragStart)="onCardDragStart($event)"></app-planning-card>
         </div>
       </div>
 
-      <div class="backlog">
-        <div class="top">
-          <span>Backlog</span>
+      <div class="section">
+        <div class="top" [ngClass]="{'isExpand': !backlog.isCollapsed}">
+          <div class="toggle-container" [ngClass]="{'isExpand': !backlog.isCollapsed}" (click)="toggleSectionCollapse(backlog)">
+            <i class="material-icons toggle-icon">{{ getSectionCollapseStatus(backlog.isCollapsed) }}</i>
+          </div>
+          <div class="details">
+              <span>Backlog</span>
+          </div>
+          <div class="status"></div>
+          <div class="button-container">
+            <button class="header-button" pButton type="button" icon="fa-plus" label="Add Item" (click)="displayAddItemDialog(-1)"></button>
+          </div>
         </div>
-        <div class="cards-container" pDroppable="cards">
-          <app-planning-card *ngFor="let item of backlog" [item]="item" (onClicked)="onCardClicked($event)" pDraggable="cards"  dragHandle=".user-picture"></app-planning-card>
+        <div class="cards-container" *ngIf="!backlog.isCollapsed" pDroppable="cards">
+          <app-planning-card *ngFor="let item of backlog.items" [item]="item" (onClicked)="onCardClicked($event)" pDraggable="cards" dragHandle=".user-picture"></app-planning-card>
         </div>
       </div>
     </div>
   </div>
+
   <div class="side-container">
     Story details will appear here.
   </div>
 </div>
+
+<add-item-dialog [display]="dialogsStatus.addItem" [sprintId]="activeSprintId" (onDialogStatusChange)="onAddItemDialogStatusChange($event)"></add-item-dialog>

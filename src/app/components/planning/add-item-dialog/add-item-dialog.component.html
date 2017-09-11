@@ -1,0 +1,11 @@
+<p-dialog header="Add New Item" [(visible)]="display" [width]="400" [modal]="true" (onHide)="closeDialog()">
+    <span class="ui-float-label">
+        <label for="float-input">Item Title</label>
+        <input type="text" id="float-input" size="30" pInputText [(ngModel)]="item.title">
+    </span>
+    <!-- <p-editor [(ngModel)]="item.description" [style]="{'height': '300px'}" #description></p-editor> -->
+    <p-footer>
+        <button pButton label="Cancel" icon="fa-ban"></button>
+        <button pButton label="Add" icon="fa-plus"></button>
+    </p-footer>
+</p-dialog>

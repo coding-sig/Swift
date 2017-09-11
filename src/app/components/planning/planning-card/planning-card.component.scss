@@ -15,8 +15,7 @@ $card-hover-color: rgba(255, 137, 52, 0.2);
     @include flex-container(row);
 
     height: 45px;
-    box-shadow: none;
-    border-radius: 2px;
+    border-radius: 3px;
     position: relative;
     margin: 2px;
     font-size: 11px;

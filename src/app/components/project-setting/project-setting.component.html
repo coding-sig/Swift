@@ -1,0 +1,138 @@
+<div class="project-setting">
+
+  <div class="steps"></div>
+
+  <div class="introduction section" *ngIf="currentStep === 0">
+    <div class="title">
+      Agile made easy.
+    </div>
+    <div class="description">
+      <p>Built with Agile in mind, Swift is a tool designed to facilitate the team dynamic in Agile processes.</p>
+      <p>Let's begin with setting up your project.</p>
+    </div>
+    <div class="content"></div>
+    <div class="footer">
+      <button type="button" pButton label="Let's go" (click)="nextStep()"></button>
+    </div>
+  </div>
+
+  <div class="modes section" *ngIf="currentStep === 1">
+    <div class="title">
+      Project Mode
+    </div>
+    <div class="description">
+      There are 2 agile alternatives in Swift:
+    </div>
+    <div class="content columns mode-details">
+      <div class="column" *ngFor="let mode of modesModel">
+        <div class="icon">
+            <img [src]="mode.iconUrl" class="icon">
+        </div>
+        <div class="mode-title">{{ mode.mode }}</div>
+        <div class="panel">{{ mode.description }}</div>
+      </div>
+    </div>
+    <div class="footer">
+      <button type="button" pButton label="Previous" (click)="previousStep()"></button>
+      <button type="button" pButton label="Next" (click)="nextStep()"></button>
+    </div>
+  </div>
+
+  <div class="admins section" *ngIf="currentStep === 2">
+    <div class="title">
+      Project Administrators
+    </div>
+    <div class="description">
+      <p>Then, let's decide the administrators for the project.</p>
+      <p>Project administrators will have the access right to change the project settings.</p>
+    </div>
+    <div class="content">
+
+    </div>
+    <div class="footer">
+      <button type="button" pButton label="Previous" (click)="previousStep()"></button>
+      <button type="button" pButton label="Next" (click)="nextStep()"></button>
+    </div>
+  </div>
+
+  <div class="members section" *ngIf="currentStep === 3">
+    <div class="title">
+      Project Members
+    </div>
+    <div class="description">
+      <p>Well, you can't expect to have a great project without any members right?</p>
+    </div>
+    <div class="content">
+
+    </div>
+    <div class="footer">
+      <button type="button" pButton label="Previous" (click)="previousStep()"></button>
+      <button type="button" pButton label="Next" (click)="nextStep()"></button>
+    </div>
+  </div>
+
+  <div class="status-configuration section" *ngIf="currentStep === 4">
+    <div class="title">
+      Configure Issue Status
+    </div>
+    <div class="description">
+      <p>You can setup the status you want to see in each of the issues you create, and update it based on the phases of the
+        project.
+      </p>
+    </div>
+    <div class="content">
+
+    </div>
+    <div class="footer">
+      <button type="button" pButton label="Previous" (click)="previousStep()"></button>
+      <button type="button" pButton label="Next" (click)="nextStep()"></button>
+    </div>
+  </div>
+
+  <div class="project-source section" *ngIf="currentStep === 5">
+    <div class="title">
+      Project Issues Source
+    </div>
+    <div class="description">
+      <p>There are 2 ways of setting up the entry points of project issues: </p>
+    </div>
+    <div class="content">
+
+    </div>
+    <div class="footer">
+      <button type="button" pButton label="Previous" (click)="previousStep()"></button>
+      <button type="button" pButton label="Next" (click)="nextStep()"></button>
+    </div>
+  </div>
+
+  <div class="board-source section" *ngIf="currentStep === 6">
+    <div class="title">
+      Board Issues Source
+    </div>
+    <div class="description">
+      <p>This determines which issues appear on the board.</p>
+    </div>
+    <div class="content">
+
+    </div>
+    <div class="footer">
+      <button type="button" pButton label="Previous" (click)="previousStep()"></button>
+      <button type="button" pButton label="Next" (click)="nextStep()"></button>
+    </div>
+  </div>
+
+  <div class="ending section" *ngIf="currentStep === 7">
+    <div class="title">
+      All the best!
+    </div>
+    <div class="description">
+      <p>We are up to go, let's rock!</p>
+    </div>
+    <div class="content">
+
+    </div>
+    <div class="footer">
+      <button type="button" pButton label="Done" (click)="done()"></button>
+    </div>
+  </div>
+</div>

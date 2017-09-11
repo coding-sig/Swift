@@ -3,8 +3,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-// default component loaded on AppComponent Initialized
-import { LandingModule } from './components/landing-page/landing-page.module'; 
 
 import { AppComponent } from './app.component';
 import { AppThemeService } from './services/app-theme.service';
@@ -16,8 +14,7 @@ import { AppThemeService } from './services/app-theme.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
-    LandingModule
+    AppRoutingModule
   ],
   providers: [AppThemeService],
   bootstrap: [AppComponent]

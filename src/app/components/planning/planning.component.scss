@@ -9,10 +9,12 @@
 @import '../../stylings/variables/color-theme';
 @import '../../stylings/variables/font';
 @import '../../stylings/variables/main';
+@import '../../stylings/variables/resolution';
 
 $tool-bar-bg: $dark-primary-color;
 $tool-bar-font-color: $color-white;
 $tool-bar-font-weight: $font-weight-medium;
+$header-bg-color: #fff;
 
 app-planning {
     width: 100%;
@@ -65,14 +67,6 @@ app-planning {
             @include flex-container(column);
     
             overflow-y: auto;
-    
-            .backlog {
-                @extend .section;
-            }
-    
-            .sprint {
-                @extend .section;
-            }
         }
     }
    
@@ -114,34 +108,61 @@ app-planning {
 }
 
 .section {
-    padding: 8px;
+    margin: 0 8px;
 
     .top {
         @extend .header;
 
+        &.isExpand {
+            box-shadow: $shadow-light;
+            margin: 10px 0 8px 0;            
+        }
+
         .toggle-container {
-            width: 30px;
-            text-align: center;
+            @include flex-container(row) {
+                align-items: center;
+                justify-content: center;
+            }
+
+            &.isExpand {
+                @extend .secondary;
+
+            }
+
+            width: 35px;
+            height: 100%;
 
             .material-icons.toggle-icon {
                 color: #000;
                 width: 100%;
                 margin: 0;
+                text-align: center;
             }
         }
 
-        .sprint-details {
+        .details {
             @include flex-container(column);
 
             padding: 8px;
+            width: 100px;
+
+            span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
 
-        i.material-icons.running-sprint-icon {
-            color: #000;
-            cursor: default;
+        .status {
+            width: 50px;
 
-            &:hover {
-                font-size: 24px;
+            .material-icons.running-sprint-icon {
+                color: #000;
+                cursor: default;
+               
+                &:hover {
+                    font-size: 24px;
+                }
             }
         }
     }
@@ -151,7 +172,8 @@ app-planning {
 
         overflow-y: auto;
         max-height: 300px;
-
+        margin: 10px 8px;
+    
         app-planning-card {
             @include flex-child(1);
         }
@@ -163,8 +185,30 @@ app-planning {
         align-items: center;
     };
 
-    .add-new {
-        color: $dark-secondary-color;
+    background-color: $header-bg-color;
+    box-shadow: $shadow-flat;
+    margin: 10px 0 0 0;
+
+    .button-container {
+        @include flex-container(row) {
+            align-items: center;
+        }
+
+        .header-button {
+            @include respond(#{$screen-small} + #{$side-container-width}) {
+                display: none;
+            }
+
+            margin: 0 10px 0 0;
+        }
+
+        .header-menu-button {
+            display: none;
+
+            @include respond(#{$screen-small} + #{$side-container-width}) {
+                display: block;
+            }
+        }
     }
 
     height: 45px;

@@ -1,17 +1,23 @@
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// default component loaded on AppComponent Initialized
+import { DashboardModule } from './components/dashboard/dashboard.module'; 
+
 // root routes, enabled lazy load on children modules
 export const routes: Routes = [
-    { path: '', redirectTo: 'landing', pathMatch: 'full' },
+    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'planning', loadChildren: './components/planning/planning.module#PlanningModule' },
     { path: 'board', loadChildren: './components/board/board.module#BoardModule' },
-    { path: 'dashboard', loadChildren: './components/dashboard/dashboard.module#DashboardModule'}
+    { path: 'project', loadChildren: './components/project-setting/project-setting.module#ProjectSettingModule'},
+    { path: 'dashboard', component: DashboardComponent }
   ];
   
 @NgModule({
     imports: [ 
-        RouterModule.forRoot(routes) 
+        RouterModule.forRoot(routes),
+        DashboardModule 
     ],
     declarations: [],
     exports: [ 
