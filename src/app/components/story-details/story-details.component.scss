@@ -1,0 +1,38 @@
+.status-label{
+	display: inline-block;
+    line-height: 1;
+	padding: 5px;
+    min-width: 3em;
+    text-align: center;
+    border: 0 solid transparent;
+    border-radius: .28571429rem;
+    color: black;
+	font-size: 12px;
+	float: right;
+    position: relative;
+    right: 20%;
+}
+
+.priority-label{
+	float: right;
+	position: relative;
+}
+
+.white{
+	background-color: white
+}
+
+.yellow {
+	background-color: rgba(255, 255, 0, 0.85);
+}
+
+.avatar-position{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.card-avatar {
+	border-radius: 50%;
+	border: 3px solid #fff;
+	box-shadow: 0 0 4px rgba(0,0,0,.35);
+}

@@ -7,6 +7,7 @@ import { DragDropModule } from 'primeng/primeng';
 import { BoardRoutingModule } from './board-routing.module';
 import { BoardComponent } from './board.component'; 
 import { BoardSettingsComponent } from './board-settings/board-settings.component';
+import { StoryDetailsComponent } from '../story-details/story-details.component';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { BoardSettingsComponent } from './board-settings/board-settings.componen
     ],
     declarations: [ 
         BoardComponent,
-        BoardSettingsComponent
+        BoardSettingsComponent,
+        StoryDetailsComponent
     ],
     providers: []
 })

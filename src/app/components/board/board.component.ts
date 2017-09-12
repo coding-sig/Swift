@@ -50,8 +50,6 @@ export class BoardComponent implements OnInit {
 		console.log(event);
 	}
 
-	hero = 'assets/user-profile/user-profile-spiderman.png'
-
 	ngOnInit() {
 	}
 
