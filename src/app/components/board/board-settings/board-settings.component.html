@@ -25,22 +25,22 @@
 			</section>
 		</p-tabPanel>
 		<p-tabPanel header="Column">
-			<div class="columns-wrapper flex-row" pDroppable="col-card" (onDrop)="drop($event)">
-				<div class="column" *ngFor="let column of mockColumnConfig" pDraggable="col-card" dragHandle=".mdi-drag">
+			<div class="columns-wrapper flex-row" [dragula]='"columns-container-bag"' [dragulaModel]="mockColumnConfig">
+				<div class="column" *ngFor="let column of mockColumnConfig">
 					<div class="icon-wrapper">
 						<div class="drag-icon-wrapper"><i class="mdi mdi-drag"></i></div>
 						<span class="spacing"></span>
 						<i class="mdi mdi-delete"></i>
 					</div>
 					<div class="column-title">{{column.title}}</div>
-					<div>
+					<div [dragula]='"column-statuses-bag"'>
 						<div class="status-card" *ngFor="let status of column.statuses">{{status}}</div>
 					</div>
 				</div>
 				<div class="column unmapped-statuses">
 					<div class="column-title">Unmapped Statuses</div>
 					<div>
-						<div class="status-card" *ngFor="let status of unmappedStatuses" pDraggable="dd">{{status}}</div>
+						<div class="status-card" *ngFor="let status of unmappedStatuses">{{status}}</div>
 					</div>
 				</div>
 			</div>
