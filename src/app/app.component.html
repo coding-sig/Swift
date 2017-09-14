@@ -5,9 +5,9 @@
       <img class="app-icon" [src]="appIcon.url" [width]="appIcon.width" [height]="appIcon.height">
       <div class="app-title">Swift</div>
     </div>
-    
+
     <div class="nav-tabs">
-      <div class="tab" *ngFor="let tab of navTabModel" (click)="switchTab(tab.route)" [ngClass]="[getActiveTab(tab.route), getThemeClassName()]" 
+      <div class="tab" *ngFor="let tab of navTabModel" (click)="switchTab(tab.route)" [ngClass]="[getActiveTab(tab.route), getThemeClassName()]"
         routerLink="{{ tab.route }}" routerLinkActive="active">{{ tab.title }}</div>
     </div>
 
@@ -15,15 +15,24 @@
 
     <div class="user-profile">
       <div class="user-picture-frame" (click)="changeColorTheme()">
-         <img class="user-picture" [src]="userProfile.defaultPicUrl">
+        <img class="user-picture" [src]="userProfile.defaultPicUrl">
       </div>
       <div class="user-name">{{ userProfile.name }}</div>
+    </div>
+
+    <div class="settings">
+      <i class="material-icons icon" (click)="toggleSideNav(true)">settings</i>
     </div>
   </div>
 
   <div class="app-content">
+    <div class="app-side-nav" *ngIf="isShowSideNav">
+      <project-side-nav (onToggleDisplay)="toggleSideNav($event)"></project-side-nav>
+    </div>
 
-    <router-outlet></router-outlet>
+    <div class="app-outlet">
+      <router-outlet></router-outlet>
+    </div>
 
   </div>
 

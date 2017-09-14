@@ -43,6 +43,8 @@ export class AppComponent {
 
   appTheme: string;
 
+  isShowSideNav: boolean;
+
   constructor(
     private router: Router,
     private themeService: AppThemeService
@@ -57,6 +59,10 @@ export class AppComponent {
 
   switchTab(tabName: string) {
     this.activeTab = tabName;
+  }
+
+  toggleSideNav(option: boolean) {
+    this.isShowSideNav = option;
   }
 
   changeColorTheme() {

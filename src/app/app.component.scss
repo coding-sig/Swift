@@ -116,6 +116,15 @@ $variant: 'light';
                 cursor: default;
             }
         }
+
+        .settings {
+            margin: 0 15px;
+            cursor: pointer;
+            
+            .icon {
+                outline: none;
+            }
+        }
     }
 
     .app-content {
@@ -123,9 +132,24 @@ $variant: 'light';
         @include respond($screen-small) {
              max-height: calc(100% - #{$toolbar-height});
         }
+        @include flex-container(row);
 
         background: $content-bg-color;
         max-height: calc(100% - #{$toolbar-height} - #{$footer-height});
+
+        .app-side-nav {
+            width: 250px;
+            height: 100%;
+            box-shadow: $shadow-light;
+
+            project-side-nav {
+                height: 100%;
+            }
+        }
+
+        .app-outlet {
+            @include flex-child(1);
+        }
     }
 
     .app-footer {

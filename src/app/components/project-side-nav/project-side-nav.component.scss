@@ -1,0 +1,54 @@
+// partial styles
+@import '../../stylings/partial-classes/theme';
+
+// app theme variables
+@import '../../stylings/variables/color-theme';
+@import '../../stylings/variables/shadow';
+@import '../../stylings/variables/font';
+@import '../../stylings/variables/main';
+@import '../../stylings/variables/resolution';
+
+// mixins
+@import '../../stylings/mixins/respond';
+@import '../../stylings/mixins/flex-container';
+@import '../../stylings/mixins/flex-child';
+
+$side-nav-bg-color: #fff;
+
+.project-side-nav {
+    @include flex-container(column);
+
+    background: $side-nav-bg-color;
+    height: 100%;
+
+    .top {
+        @include flex-container(row);
+        
+        padding: 8px;
+
+        .title {
+            @include flex-child(1);
+
+            font-size: $font-title-size;
+            font-weight: $font-weight-medium;
+        }
+
+        .icon {
+            outline: none;
+            cursor: pointer;
+            width: 20px;
+            margin: 0 8px;
+        }
+    }
+
+    .content {
+        @include flex-child(1);
+        @include flex-container(column) {
+            justify-content: flex-start;
+        }
+
+        background-color: darken($content-bg-color, 15%);
+        box-shadow: inset $shadow-medium;
+        overflow-y: auto;
+    }
+}
