@@ -12,7 +12,11 @@ export class LoginComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	private myClientId: string = '567234805573-rsvdnmpubrol8mp4oi5o0oqfr69pruls.apps.googleusercontent.com';
+	private googleLoginClientId: string = '567234805573-rsvdnmpubrol8mp4oi5o0oqfr69pruls.apps.googleusercontent.com';
+	private googleLoginTheme: string = 'dark';
+	private googleLoginWidth: string = '400';
+	private googleLoginLongTitle: string = 'true';
+	private googleLoginScope: string = 'profile email';
 
 	onGoogleSignInSuccess(event: GoogleSignInSuccess) {
 		let googleUser: gapi.auth2.GoogleUser = event.googleUser;

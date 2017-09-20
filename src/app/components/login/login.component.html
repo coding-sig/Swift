@@ -1,11 +1,16 @@
-<div class="login-main-container">
-	<div class="brand">
-		<div class="brand-logo-container"><img class="medium-logo" src="assets/app-logo/orange-logo.png"></div>
-		<div class="brand-text-container"><span class="brand-text">S W I F T</span></div>
-	</div>
-	<div class="main-content">
-		<div>PLEASE SIGN IN TO CONTINUE</div>
-		<google-signin [clientId]="myClientId" [width]="myWidth" [theme]="myTheme" [scope]="myScope" [longTitle]="myLongTitle" (googleSignInSuccess)="onGoogleSignInSuccess($event)">
-		</google-signin>
+<div class="login-wrapper">
+	<div class="login-main-container">
+		<div class="brand">
+			<div class="brand-logo-container"><img class="medium-logo" src="assets/app-logo/orange-logo.png"></div>
+			<div class="brand-text-container"><span class="brand-text">S W I F T</span></div>
+		</div>
+		<div class="main-content">
+			<div class="description">PLEASE SIGN IN TO CONTINUE</div>
+			<div class="google-login-button-wrapper">
+				<google-signin [clientId]="googleLoginClientId" [width]="googleLoginWidth" [theme]="googleLoginTheme" [scope]="googleLoginScope"
+				 [longTitle]="googleLoginLongTitle" (googleSignInSuccess)="onGoogleSignInSuccess($event)">
+				</google-signin>
+			</div>
+		</div>
 	</div>
 </div>
