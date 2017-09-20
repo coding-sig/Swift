@@ -1,0 +1,47 @@
+.login-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.login-main-container {
+	text-align: center;
+	vertical-align: middle;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px;
+}
+
+.medium-logo {
+	width: 38px;
+	height: 69px;
+}
+
+.brand {
+	display: flex;
+	justify-content: center;
+	margin: 10px 0;
+}
+
+.brand-logo-container,
+.brand-text-container {
+
+}
+
+.brand-text-container {
+	position: relative;
+	font-size: 40px;
+	font-weight: 700;
+	padding: 12px 10px;
+	color: #5F5F5F;
+}
+
+.main-content {
+	background-color:  #43464B;
+	color: #fff;
+	padding: 20px 40px;
+	text-align: initial;
+}

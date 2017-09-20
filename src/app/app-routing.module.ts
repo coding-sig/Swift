@@ -8,15 +8,16 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
 // root routes, enabled lazy load on children modules
 export const routes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    { path: 'login', loadChildren: './components/login/login.module#LoginModule' },
     { path: 'planning', loadChildren: './components/planning/planning.module#PlanningModule' },
     { path: 'board', loadChildren: './components/board/board.module#BoardModule' },
     { path: 'project', loadChildren: './components/project-setting/project-setting.module#ProjectSettingModule'},
     { path: 'dashboard', component: DashboardComponent }
   ];
-  
+    
 @NgModule({
     imports: [ 
-        RouterModule.forRoot(routes),
+        RouterModule.forRoot(routes, { enableTracing: true } /** debugging purposes **/ ),
         DashboardModule 
     ],
     declarations: [],
