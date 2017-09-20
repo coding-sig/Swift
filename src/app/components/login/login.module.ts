@@ -4,6 +4,7 @@ import { InputTextModule } from 'primeng/primeng';
 
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
+import { GoogleSignInComponent } from 'angular-google-signin';
 
 @NgModule({
 	imports: [
@@ -12,7 +13,8 @@ import { LoginRoutingModule } from './login-routing.module';
 		LoginRoutingModule
 	],
 	declarations: [
-		LoginComponent
+		LoginComponent,
+		GoogleSignInComponent
 	],
 	providers: []
 })

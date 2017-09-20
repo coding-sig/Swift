@@ -5,6 +5,7 @@
 	</div>
 	<div class="main-content">
 		<div>PLEASE SIGN IN TO CONTINUE</div>
-		
+		<google-signin [clientId]="myClientId" [width]="myWidth" [theme]="myTheme" [scope]="myScope" [longTitle]="myLongTitle" (googleSignInSuccess)="onGoogleSignInSuccess($event)">
+		</google-signin>
 	</div>
 </div>
