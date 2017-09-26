@@ -12,6 +12,7 @@ export const routes: Routes = [
     { path: 'planning', loadChildren: './components/planning/planning.module#PlanningModule' },
     { path: 'board', loadChildren: './components/board/board.module#BoardModule' },
     { path: 'project', loadChildren: './components/project-setting/project-setting.module#ProjectSettingModule'},
+    { path: 'user-profile', loadChildren: './components/user-profile/user-profile.module#UserProfileModule' },
     { path: 'dashboard', component: DashboardComponent }
   ];
     
