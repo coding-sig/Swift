@@ -9,7 +9,10 @@ export class UserProfileComponent implements OnInit {
 
 	constructor() { }
 
-	
+	genderOptions = [
+		{ value: 'Male', viewValue: 'Male' },
+		{ value: 'Female', viewValue: 'Female' }
+	];
 
 	ngOnInit() {
 	}

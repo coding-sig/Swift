@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="user-profile-title">Edit Profile</div>
+
+	<form class="user-profile-content flex-column">
+		<div class="flex-row flex-space-around">
+			<md-form-field class="first-name-input-wrapper flex-1">
+				<input mdInput placeholder="First Name" value="">
+			</md-form-field>
+			<md-form-field class="last-name-input-wrapper flex-1">
+				<input mdInput placeholder="Last Name" value="">
+			</md-form-field>
+		</div>
+
+		<div class="flex-row flex-space-around">
+
+			<md-select placeholder="Gender" class="gender-input-wrapper flex-1">
+				<md-option *ngFor="let genderOption of genderOptions" [value]="genderOption.value">
+					{{ genderOption.viewValue }}
+				</md-option>
+			</md-select>
+
+			<md-form-field class="birthday-input-wrapper flex-1">
+				<input mdInput [mdDatepicker]="picker" placeholder="Choose a date for birthday">
+				<md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+				<md-datepicker #picker></md-datepicker>
+			</md-form-field>
+		</div>
+
+		<div class="flex-row flex-space-around">
+			<md-form-field class="flex-1">
+				<input mdInput placeholder="Email" value="">
+			</md-form-field>
+		</div>
+
+		<div class="flex-row flex-space-around">
+			<md-form-field class="flex-1">
+				<input mdInput placeholder="Company" value="">
+			</md-form-field>
+		</div>
+
+	</form>
+</div>

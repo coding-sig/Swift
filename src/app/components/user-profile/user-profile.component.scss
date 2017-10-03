@@ -1,0 +1,31 @@
+.container {
+	padding: 10px 30px;
+}
+
+.user-profile-content {
+	margin-top: 5px;
+	padding: 5px 0;
+	min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.user-profile-title {
+	font-size: 1.15em;
+	color: #4D4D4D;
+	padding: 6px 0;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.first-name-input-wrapper,
+.gender-input-wrapper {
+	margin-right: 10px;
+}
+
+.last-name-input-wrapper,
+.birthday-input-wrapper {
+	margin-left: 10px;
+}
