@@ -6,6 +6,7 @@ import { DragDropModule } from 'primeng/primeng';
 import { DialogModule } from 'primeng/primeng';
 import { InputTextModule } from 'primeng/primeng';
 import { EditorModule } from 'primeng/primeng';
+import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 
 import { PlanningRoutingModule } from './planning-routing.module';
 import { PlanningComponent } from './planning.component';
@@ -24,7 +25,8 @@ import { ButtonFilterPipe } from './planning.pipe';
         DragDropModule,
         DialogModule,
         InputTextModule,
-        EditorModule
+        EditorModule,
+        DragulaModule
     ],
     declarations: [
         PlanningComponent,
