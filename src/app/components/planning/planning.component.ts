@@ -71,6 +71,10 @@ export class PlanningComponent implements OnInit {
   
   }
 
+  ngOnDestroy() {
+    this.dragulaService.destroy('sprint-bag');
+  }
+
   onCardClicked(item) {
     item.isClicked = true;
   }

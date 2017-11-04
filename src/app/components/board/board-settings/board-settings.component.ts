@@ -57,4 +57,9 @@ export class BoardSettingsComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	ngOnDestroy() {
+		this.dragulaService.destroy('columns-container-bag');
+		this.dragulaService.destroy('column-statuses-bag');
+	}
+
 }
