@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DragulaService } from 'ng2-dragula';
 
 @Component({
 	selector: 'app-board',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-	constructor() { }
+	constructor(private dragulaService: DragulaService) {
+		dragulaService.setOptions('board-card-bag', {
+			revertOnSpill: true
+		});
+	}
 
 	mockColumns: any[] = [
 		{

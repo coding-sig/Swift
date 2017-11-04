@@ -25,12 +25,16 @@
 	background-color: #fafbfc;
 }
 
+.cards-wrapper {
+	height: 100%;
+}
+
 .card {
 	box-shadow: 0 0 3px rgba(0,0,0,.4); 
 	border-radius: 3px;
 	padding: 10px 15px;
 	margin: 15px 10px;
-	cursor: pointer;
+	cursor: move;
 	background-color: #fff;
 	transition: background-color 250ms ease-out;
 }
