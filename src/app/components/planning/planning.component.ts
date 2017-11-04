@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs/Rx';
 import { MenuItem } from 'primeng/primeng';
+import { DragulaService } from 'ng2-dragula/ng2-dragula';
 
 import { AppThemeService } from '../../services/app-theme.service';
 import { PlanningService } from './planning.service';
@@ -48,7 +49,8 @@ export class PlanningComponent implements OnInit {
 
   constructor(
     private themeService: AppThemeService,
-    private planningService: PlanningService
+    private planningService: PlanningService,
+    private dragulaService: DragulaService
   ) {
     this.themeService.getTheme().subscribe(theme => this.appTheme = theme);
     this.planningService.getBacklog().subscribe(backlog => this.backlog = backlog);
@@ -58,6 +60,10 @@ export class PlanningComponent implements OnInit {
       editSprint: false,
       addSprint: false
     };
+
+    dragulaService.setOptions('sprint-bag', {
+      removeOnSpill: true
+    });
   }
 
   ngOnInit() {

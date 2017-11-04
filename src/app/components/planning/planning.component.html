@@ -14,7 +14,7 @@
     </div>
 
     <div class="content">
-      <div class="section" *ngFor="let sprint of sprints">
+      <div class="section" *ngFor="let sprint of sprints; let i = index">
         <div class="top" [ngClass]="{'isExpand': !sprint.isCollapsed}" >
 
           <div class="toggle-container" [ngClass]="{'isExpand': !backlog.isCollapsed}" (click)="toggleSectionCollapse(sprint)">
@@ -38,7 +38,7 @@
           </div>
 
         </div>
-        <div class="cards-container" *ngIf="!sprint.isCollapsed" pDroppable="cards">
+        <div class="cards-container" *ngIf="!sprint.isCollapsed" pDroppable="cards" [dragula]="'sprint-bag'">
           <app-planning-card *ngFor="let item of sprint.items" [item]="item" (onClicked)="onCardClicked($event)" pDraggable="cards"
             dragHandle=".user-picture" (onDragStart)="onCardDragStart($event)"></app-planning-card>
         </div>
@@ -57,7 +57,7 @@
             <button class="header-button" pButton type="button" icon="fa-plus" label="Add Item" (click)="displayAddItemDialog(-1)"></button>
           </div>
         </div>
-        <div class="cards-container" *ngIf="!backlog.isCollapsed" pDroppable="cards">
+        <div class="cards-container" *ngIf="!backlog.isCollapsed" pDroppable="cards" [dragula]="'sprint-bag'">
           <app-planning-card *ngFor="let item of backlog.items" [item]="item" (onClicked)="onCardClicked($event)" pDraggable="cards" dragHandle=".user-picture"></app-planning-card>
         </div>
       </div>

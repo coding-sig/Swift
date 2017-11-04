@@ -21,6 +21,7 @@ $card-hover-color: rgba(255, 137, 52, 0.2);
     font-size: 11px;
     background-color: $card-bg-color;
     box-shadow: $shadow-flat;
+    cursor: move;
 
     &:hover {
         background-color: $card-hover-color;
