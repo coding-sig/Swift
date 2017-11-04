@@ -58,4 +58,8 @@ export class BoardComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	ngOnDestroy() {
+		this.dragulaService.destroy('board-card-bag');
+	}
+
 }
