@@ -1,24 +1,54 @@
-<div>
-  Create mock data for backend 
-  <div class="avatar-position">
-    <img [src]="hero" height="30" width="30" class="card-avatar">
+<div class="story-detail-panel-root flex-row">
+  <div class="story-detail-menu flex-column">
+    <div class="project-logo-container"><img class="project-logo" src="assets/project-logo.jpg"></div>
+    <div class="spacer"></div>
+    <div class="menu-icon-wrapper"><i class="mdi mdi-information-outline"></i></div>
+    <div class="menu-icon-wrapper"><i class="mdi mdi-format-align-left"></i></div>
+    <div class="menu-icon-wrapper"><i class="mdi mdi-comment-outline"></i></div>
+    <div class="menu-icon-wrapper"><i class="mdi mdi-paperclip"></i></div>
   </div>
-  <br>
-  <div>
-    <div style='font-weight:bold'>Description</div>
-    I should able to create the data by now. Please do not crash. Going to watch BAD GENIUS.
-  </div>
-  <br>
-  <div>
-    <div style="font-weight: bold">Details</div>
-    <div>Status
-      <div class="status-label white">To Do</div>
-    </div>
-    <div>Priority
-      <span class="priority-label"><i class="fa fa-arrow-up" style="color:red; " aria-hidden="true"></i>High</span>
-        </div>
-    <div>Task
-      <div class="status-label yellow">0/2</div>
-    </div>
+  <div class="story-detail-content flex-1">
+    <div class="project-title">Project Name</div>
+    <section class="section header-section">
+      <div class="">Story Title goes here</div>
+      <div class="flex-row">
+        <div class="flex-1 label">Story Size:</div>
+        <div class="flex-1">5</div>
+      </div>
+    </section>
+    <section class="section details-section">
+      <div class="section-label"><span>Details</span></div>
+      <div class="flex-row field-wrapper">
+        <div class="flex-1 label">Status:</div>
+        <div class="flex-1">In Progress</div>
+      </div>
+      <div class="flex-row field-wrapper">
+        <div class="flex-1 label">Priority:</div>
+        <div class="flex-1">High</div>
+      </div>
+      <div class="flex-row field-wrapper">
+        <div class="flex-1 label">Label:</div>
+        <div class="flex-1">None</div>
+      </div>
+      <div class="flex-row field-wrapper">
+        <div class="flex-1 label">Link:</div>
+        <div class="flex-1">None</div>
+      </div>
+    </section>
+    <section class="section people-section">
+      <div class="section-label"><span>People</span></div>
+      <div class="flex-row field-wrapper">
+        <div class="flex-1 label">Reportee:</div>
+        <div class="flex-1">Wei-Jye Wang</div>
+      </div>
+      <div class="flex-row field-wrapper">
+        <div class="flex-1 label">Assignee:</div>
+        <div class="flex-1">Ti Soon Lee</div>
+      </div>
+      <div class="flex-row field-wrapper">
+        <div class="flex-1 label">Submitted By:</div>
+        <div class="flex-1">Cheah Khing Tan</div>
+      </div>
+    </section>
   </div>
 </div>

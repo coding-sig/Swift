@@ -1,38 +1,92 @@
-.status-label{
-	display: inline-block;
-    line-height: 1;
+.story-detail-panel-root {
+	min-width: 300px;
+	height: 100%;
+	width: 100%;
+}
+
+.story-detail-menu {
+	width: 50px;
+	background-color:#f5f5f5;
+	box-shadow: 1px 0 5px rgba(0,0,0,.4), 0 0 15px rgba(0,0,0,.1) inset;
+	padding: 10px 0;
+}
+
+.story-detail-menu .spacer {
+	height: 40px;
+}
+
+.menu-icon-wrapper {
+	padding: 10px 5px;
+	font-size: 25px;
+	text-align: center;
+	color: #7c7c7c;
+	background-color: transparent;
+	cursor: pointer;
+	transition: background-color 250ms ease-out;
+}
+
+.menu-icon-wrapper:hover {
+	background-color: #dadada;
+}
+
+.story-detail-content {
+	background-color: #fff;
+	color: #5c5c5c;
+	padding: 15px 10px;
+	font-size: 14px;
+}
+
+.story-detail-content .project-title {
+	font-size: 16px;
+}
+
+.story-detail-content .section.header-section {
+	padding-left: 0;
+}
+
+.header-section > div {
+	margin: 5px 0;
+}
+
+.project-logo-container {
 	padding: 5px;
-    min-width: 3em;
-    text-align: center;
-    border: 0 solid transparent;
-    border-radius: .28571429rem;
-    color: black;
-	font-size: 12px;
-	float: right;
-    position: relative;
-    right: 20%;
 }
 
-.priority-label{
-	float: right;
-	position: relative;
+.project-logo {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
 }
 
-.white{
-	background-color: white
+.story-detail-content .field-wrapper > div {
+	padding: 2px;
 }
 
-.yellow {
-	background-color: rgba(255, 255, 0, 0.85);
+.story-detail-content .label {
+	color: #a0a0a0;
+
 }
 
-.avatar-position{
-	display: flex;
-	justify-content: flex-end;
+.story-detail-content .section {
+	margin: 20px 0;
+	padding-left: 15px;
 }
 
-.card-avatar {
-	border-radius: 50%;
-	border: 3px solid #fff;
-	box-shadow: 0 0 4px rgba(0,0,0,.35);
+.section > div {
+	// margin: 3px 0;
+}
+
+.story-detail-content .section-label {
+	margin: 5px 0 15px;
+	color: #464646;
+	font-weight: 600;
+	width: 100%; 
+	text-align: left; 
+	border-bottom: 1px solid #cfcfcf; 
+	line-height: 0.1em;
+}
+
+.story-detail-content .section-label span {
+	padding-right: 10px; 
+	background:#fff; 
 }
